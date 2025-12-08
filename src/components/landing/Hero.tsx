@@ -28,7 +28,7 @@ export const Hero = () => {
         <div className="mb-8 animate-fade-up opacity-0">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-cream px-4 py-2 text-sm font-medium text-charcoal">
             <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-            Clínica Lacerda • Dermatologia Avançada
+            Clínica Lacerda • Medicina Estética
           </span>
         </div>
 
