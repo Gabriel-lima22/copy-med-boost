@@ -34,9 +34,9 @@ export const Hero = () => {
 
         {/* Headline */}
         <h1 className="mb-6 max-w-4xl animate-fade-up text-center font-heading text-4xl font-semibold leading-tight text-charcoal opacity-0 stagger-1 md:text-5xl lg:text-6xl">
-          Tratamento de Melasma e Rejuvenescimento com{" "}
+          Tratamento com{" "}
           <span className="text-gold">
-            Laser CO2 Fracionado
+            Laser de CO2 Fracionado
           </span>
         </h1>
 
