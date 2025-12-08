@@ -1,15 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import draLorenaImage from "@/assets/dra-lorena.jpg";
-
 const WHATSAPP_NUMBER = "5511999999999";
 const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de agendar uma avaliação com a Dra. Lorena Lacerda.");
-
 export const Doctor = () => {
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-
-  return (
-    <section id="doutora" className="overflow-hidden bg-background py-20 md:py-28">
+  return <section id="doutora" className="overflow-hidden bg-background py-20 md:py-28">
       <div className="container">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
@@ -19,11 +15,7 @@ export const Doctor = () => {
             <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl bg-rose-soft" />
             
             <div className="relative overflow-hidden rounded-2xl shadow-card">
-              <img
-                src={draLorenaImage}
-                alt="Dra. Lorena Lacerda - Dermatologista"
-                className="h-auto w-full object-cover"
-              />
+              <img alt="Dra. Lorena Lacerda - Dermatologista" className="h-auto w-full object-cover" src="/lovable-uploads/f67bd3a2-d4fb-49c3-b143-cbad83c9b0cc.jpg" />
             </div>
 
             {/* Floating Badge */}
@@ -51,9 +43,7 @@ export const Doctor = () => {
               Dra. Lorena Lacerda
             </h2>
             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              Médica Dermatologista dedicada a oferecer um atendimento humanizado e 
-              personalizado. Acredito que cada paciente merece atenção individualizada 
-              e um plano de tratamento que respeite suas expectativas e características únicas.
+              Médica dedicada a oferecer um atendimento humanizado e personalizado. Acredito que cada paciente merece atenção individualizada e um plano de tratamento que respeite suas expectativas e características únicas.
             </p>
             <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
               Minha abordagem combina conhecimento científico atualizado com escuta ativa, 
@@ -64,9 +54,7 @@ export const Doctor = () => {
 
             {/* Credentials */}
             <div className="mb-8 flex flex-wrap gap-4">
-              <span className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-charcoal">
-                Formação em Dermatologia
-              </span>
+              <span className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-charcoal">Formação em Medicina Estética</span>
               <span className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-charcoal">
                 Especialista em Laser
               </span>
@@ -84,6 +72,5 @@ export const Doctor = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
