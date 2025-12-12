@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-skin.jpg";
 
-const WHATSAPP_NUMBER = "5511999999999"; // Replace with actual number
+const WHATSAPP_NUMBER = "5594981735505";
 const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de agendar uma avaliação para o tratamento com Laser CO2 Fracionado.");
 
 export const Hero = () => {
