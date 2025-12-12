@@ -27,8 +27,10 @@ export const Doctor = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-heading text-lg font-semibold text-charcoal">CRM Ativo</p>
-                  <p className="text-sm text-muted-foreground">Dermatologia</p>
+                  <p className="font-heading text-lg font-semibold text-charcoal">CRM 15626 </p>
+                  <p className="text-sm text-muted-foreground">Medica
+
+                </p>
                 </div>
               </div>
             </div>
