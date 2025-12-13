@@ -14,7 +14,7 @@ export const Footer = () => {
             </h3>
             <p className="mb-6 max-w-md text-sm leading-relaxed opacity-70">Medicina estética avançada com atendimento humanizado. Tratamentos personalizados para cuidar da saúde e beleza da sua pele com segurança e profissionalismo.</p>
             <div className="flex gap-4">
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 transition-colors hover:bg-gold" aria-label="Instagram">
+              <a href="https://www.instagram.com/dralorenalacerdaa/" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 transition-colors hover:bg-gold" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 transition-colors hover:bg-gold" aria-label="WhatsApp">
