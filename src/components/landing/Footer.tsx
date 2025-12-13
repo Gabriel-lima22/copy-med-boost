@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Instagram, Clock, MessageCircle } from "lucide-react";
-const WHATSAPP_NUMBER = "5511999999999";
+const WHATSAPP_NUMBER = "5594981735505";
 const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de mais informações sobre a Clínica Lacerda.");
 export const Footer = () => {
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
