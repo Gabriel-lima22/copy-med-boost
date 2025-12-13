@@ -29,7 +29,10 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm opacity-70">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                <span>Rua Exemplo, 123 - Bairro<br />Cidade - Estado</span>
+                <span>​Fl.27,QD07,LT08
+Bairro: Nova Maraba  
+   
+ <br /> Maraba - Pará  </span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0 text-gold" />
