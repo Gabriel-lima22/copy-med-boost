@@ -1,18 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "5594981735505";
-const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de agendar uma avaliação.");
+const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma avaliação.");
 
 export const FloatingWhatsApp = () => {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-
   return (
     <a
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 animate-float"
+      onClick={(e) => handleWhatsAppClick(e, whatsappLink)}
     >
       <Button
         variant="whatsapp"

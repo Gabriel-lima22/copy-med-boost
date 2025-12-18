@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
+import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "5594981735505";
-const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de agendar uma avaliação.");
+const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma avaliação.");
 
 const navLinks = [
   { href: "#indicacoes", label: "Indicações" },
@@ -14,7 +14,6 @@ const navLinks = [
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +48,12 @@ export const Header = () => {
               {link.label}
             </a>
           ))}
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          <a 
+            href={whatsappLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={(e) => handleWhatsAppClick(e, whatsappLink)}
+          >
             <Button variant="cta" size="sm" className="gap-2">
               <MessageCircle className="h-4 w-4" />
               Agendar
@@ -89,7 +93,10 @@ export const Header = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                setIsMobileMenuOpen(false);
+                handleWhatsAppClick(e, whatsappLink);
+              }}
             >
               <Button variant="whatsapp" className="w-full gap-2">
                 <MessageCircle className="h-4 w-4" />

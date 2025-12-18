@@ -27,6 +27,22 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17789690534');
+      
+      // Conversion tracking function for WhatsApp clicks
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17789690534/1tfpCLyTl84bEKbF5KJC',
+          'value': 1.0,
+          'currency': 'BRL',
+          'event_callback': callback
+        });
+        return false;
+      }
     </script>
   </head>
 

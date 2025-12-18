@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
-import draLorenaImage from "@/assets/dra-lorena.jpg";
-const WHATSAPP_NUMBER = "5511999999999";
-const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de agendar uma avaliação com a Dra. Lorena Lacerda.");
+import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
+
+const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma avaliação com a Dra. Lorena Lacerda.");
+
 export const Doctor = () => {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-  return <section id="doutora" className="overflow-hidden bg-background py-20 md:py-28">
+  return (
+    <section id="doutora" className="overflow-hidden bg-background py-20 md:py-28">
       <div className="container">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
@@ -15,7 +16,11 @@ export const Doctor = () => {
             <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl bg-rose-soft" />
             
             <div className="relative overflow-hidden rounded-2xl shadow-card">
-              <img alt="Dra. Lorena Lacerda - Dermatologista" className="h-auto w-full object-cover" src="/lovable-uploads/f67bd3a2-d4fb-49c3-b143-cbad83c9b0cc.jpg" />
+              <img 
+                alt="Dra. Lorena Lacerda - Dermatologista" 
+                className="h-auto w-full object-cover" 
+                src="/lovable-uploads/f67bd3a2-d4fb-49c3-b143-cbad83c9b0cc.jpg" 
+              />
             </div>
 
             {/* Floating Badge */}
@@ -27,10 +32,8 @@ export const Doctor = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-heading text-lg font-semibold text-charcoal">CRM 15626 </p>
-                  <p className="text-sm text-muted-foreground">Medica
-
-                </p>
+                  <p className="font-heading text-lg font-semibold text-charcoal">CRM 15626</p>
+                  <p className="text-sm text-muted-foreground">Médica</p>
                 </div>
               </div>
             </div>
@@ -65,7 +68,12 @@ export const Doctor = () => {
               </span>
             </div>
 
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <a 
+              href={whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => handleWhatsAppClick(e, whatsappLink)}
+            >
               <Button variant="cta" size="lg" className="gap-2">
                 <MessageCircle className="h-5 w-5" />
                 Agendar Consulta
@@ -74,5 +82,6 @@ export const Doctor = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
