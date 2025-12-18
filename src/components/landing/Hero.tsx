@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-skin.jpg";
+import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "5594981735505";
-const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de agendar uma avaliação para o tratamento com Laser CO2 Fracionado.");
+const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma avaliação para o tratamento com Laser CO2 Fracionado.");
 
 export const Hero = () => {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-hero">
       {/* Background Image */}
@@ -48,7 +46,12 @@ export const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex animate-fade-up flex-col items-center gap-4 opacity-0 stagger-3 sm:flex-row">
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          <a 
+            href={whatsappLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={(e) => handleWhatsAppClick(e, whatsappLink)}
+          >
             <Button variant="whatsapp" size="xl" className="gap-3">
               <MessageCircle className="h-5 w-5" />
               Agendar Avaliação Médica

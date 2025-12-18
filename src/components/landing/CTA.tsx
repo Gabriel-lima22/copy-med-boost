@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone } from "lucide-react";
+import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "5594981735505";
-const WHATSAPP_MESSAGE = encodeURIComponent("Olá! Gostaria de agendar uma avaliação para o tratamento com Laser CO2 Fracionado.");
+const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma avaliação para o tratamento com Laser CO2 Fracionado.");
 
 export const CTA = () => {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-
   return (
     <section className="relative overflow-hidden bg-gradient-soft py-20 md:py-28">
       {/* Decorative Elements */}
@@ -31,7 +29,12 @@ export const CTA = () => {
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <a 
+              href={whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => handleWhatsAppClick(e, whatsappLink)}
+            >
               <Button variant="whatsapp" size="xl" className="gap-3">
                 <MessageCircle className="h-5 w-5" />
                 Agendar pelo WhatsApp
