@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import LaserCO2 from "./pages/LaserCO2";
+import Botox from "./pages/Botox";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/laser-co2" element={<LaserCO2 />} />
+            <Route path="/botox" element={<Botox />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
