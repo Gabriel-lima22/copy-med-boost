@@ -1,4 +1,4 @@
-import { Sparkles, Syringe, User, Scissors, CircleDot } from "lucide-react";
+import { Sparkles, Syringe, User, Scissors, CircleDot, Target } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
