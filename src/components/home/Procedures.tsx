@@ -1,4 +1,4 @@
-import { Sparkles, Syringe, User, Scissors, CircleDot } from "lucide-react";
+import { Sparkles, Syringe, User, Scissors, CircleDot, Target } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -33,6 +33,12 @@ const procedures = [
     icon: CircleDot,
     title: "Modelação de Glúteos",
     description: "Procedimento estético para definição e contorno dos glúteos, proporcionando resultados naturais e harmoniosos.",
+    isExclusive: false,
+  },
+  {
+    icon: Target,
+    title: "Lipoaspiração Localizada",
+    description: "Remoção precisa de gordura localizada em áreas específicas do corpo, promovendo contornos mais definidos e proporcionais com recuperação rápida.",
     isExclusive: false,
   },
 ];
