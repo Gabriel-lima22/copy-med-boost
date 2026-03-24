@@ -36,7 +36,7 @@ const procedures = [
     isExclusive: false,
   },
   {
-    icon: Scissors,
+    icon: Target,
     title: "Lipoaspiração Localizada",
     description: "Remoção precisa de gordura localizada em áreas específicas do corpo, promovendo contornos mais definidos e proporcionais com recuperação rápida.",
     isExclusive: false,
