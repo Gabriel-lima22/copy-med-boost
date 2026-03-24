@@ -35,6 +35,12 @@ const procedures = [
     description: "Procedimento estético para definição e contorno dos glúteos, proporcionando resultados naturais e harmoniosos.",
     isExclusive: false,
   },
+  {
+    icon: Scissors,
+    title: "Lipoaspiração Localizada",
+    description: "Remoção precisa de gordura localizada em áreas específicas do corpo, promovendo contornos mais definidos e proporcionais com recuperação rápida.",
+    isExclusive: false,
+  },
 ];
 
 export const Procedures = () => {
