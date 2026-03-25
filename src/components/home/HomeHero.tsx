@@ -17,7 +17,7 @@ export const HomeHero = () => {
         <div className="mb-8 animate-fade-up opacity-0">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-cream px-4 py-2 text-sm font-medium text-charcoal">
             <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-            Dermatologia & Medicina Estética
+            Medicina Estética
           </span>
         </div>
 
@@ -35,7 +35,7 @@ export const HomeHero = () => {
         </p>
 
         <p className="mb-10 max-w-2xl animate-fade-up text-center text-lg leading-relaxed text-muted-foreground opacity-0 stagger-2 md:text-xl">
-          Cuidado especializado em dermatologia e estética facial e corporal, 
+          Cuidado especializado em medicina estética facial e corporal, 
           com tecnologia avançada e atendimento humanizado.
         </p>
 
@@ -66,7 +66,7 @@ export const HomeHero = () => {
             <svg className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
             </svg>
-            <span>Médica Dermatologista</span>
+            <span>Médica Especialista em Estética</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">

@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "O Laser CO2 Fracionado é seguro?",
     answer:
-      "Sim, quando realizado por médico especializado e com equipamento adequado, o Laser CO2 Fracionado é um procedimento seguro e amplamente utilizado na dermatologia. Na Clínica Lacerda, todo o tratamento é conduzido pela Dra. Lorena Lacerda, garantindo avaliação criteriosa antes do procedimento, parâmetros personalizados e acompanhamento durante a recuperação.",
+      "Sim, quando realizado por médico especializado e com equipamento adequado, o Laser CO2 Fracionado é um procedimento seguro e amplamente utilizado na medicina estética. Na Clínica Lacerda, todo o tratamento é conduzido pela Dra. Lorena Lacerda, garantindo avaliação criteriosa antes do procedimento, parâmetros personalizados e acompanhamento durante a recuperação.",
   },
 ];
 

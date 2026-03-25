@@ -13,12 +13,12 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Laser CO2 Fracionado - Clínica Lacerda | Dra. Lorena Lacerda - Dermatologista</title>
+        <title>Laser CO2 Fracionado - Clínica Lacerda | Dra. Lorena Lacerda - Medicina Estética</title>
         <meta
           name="description"
-          content="Tratamento de Melasma, Rejuvenescimento Facial e Cicatrizes com Laser CO2 Fracionado. Dra. Lorena Lacerda - Dermatologista. Agende sua avaliação."
+          content="Tratamento de Melasma, Rejuvenescimento Facial e Cicatrizes com Laser CO2 Fracionado. Dra. Lorena Lacerda - Médica Especialista em Estética. Agende sua avaliação."
         />
-        <meta name="keywords" content="laser co2 fracionado, melasma tratamento, rejuvenescimento facial, cicatrizes acne, dermatologista, clínica lacerda" />
+        <meta name="keywords" content="laser co2 fracionado, melasma tratamento, rejuvenescimento facial, cicatrizes acne, medicina estética, clínica lacerda" />
         <link rel="canonical" href="https://clinicalacerda.com.br" />
         
         {/* Open Graph */}
@@ -33,7 +33,7 @@ const Index = () => {
             "@type": "MedicalClinic",
             "name": "Clínica Lacerda",
             "description": "Clínica de dermatologia especializada em tratamentos com Laser CO2 Fracionado",
-            "medicalSpecialty": "Dermatology",
+            "medicalSpecialty": "PlasticSurgery",
             "availableService": {
               "@type": "MedicalProcedure",
               "name": "Laser CO2 Fracionado",

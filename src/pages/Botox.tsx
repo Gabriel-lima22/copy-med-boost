@@ -18,7 +18,7 @@ const Botox = () => {
           name="description"
           content="Tratamento com Botox para suavização de rugas e linhas de expressão. Resultado natural com a Dra. Lorena Lacerda. Agende sua avaliação."
         />
-        <meta name="keywords" content="botox, toxina botulínica, rugas, linhas de expressão, rejuvenescimento facial, dermatologista, clínica lacerda" />
+        <meta name="keywords" content="botox, toxina botulínica, rugas, linhas de expressão, rejuvenescimento facial, medicina estética, clínica lacerda" />
         <link rel="canonical" href="https://clinicalacerda.com.br/botox" />
         
         {/* Open Graph */}
@@ -33,7 +33,7 @@ const Botox = () => {
             "@type": "MedicalClinic",
             "name": "Clínica Lacerda",
             "description": "Clínica de medicina estética especializada em tratamentos com Toxina Botulínica",
-            "medicalSpecialty": "Dermatology",
+            "medicalSpecialty": "PlasticSurgery",
             "availableService": {
               "@type": "MedicalProcedure",
               "name": "Botox - Toxina Botulínica",

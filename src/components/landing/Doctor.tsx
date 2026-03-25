@@ -17,7 +17,7 @@ export const Doctor = () => {
             
             <div className="relative overflow-hidden rounded-2xl shadow-card">
               <img 
-                alt="Dra. Lorena Lacerda - Dermatologista" 
+                alt="Dra. Lorena Lacerda - Médica Especialista em Estética" 
                 className="h-auto w-full object-cover" 
                 src="/lovable-uploads/f67bd3a2-d4fb-49c3-b143-cbad83c9b0cc.jpg" 
               />
