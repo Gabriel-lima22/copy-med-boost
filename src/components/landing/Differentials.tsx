@@ -6,7 +6,7 @@ const differentials = [{
 }, {
   icon: Shield,
   title: "Segurança em Primeiro Lugar",
-  description: "Procedimento realizado exclusivamente por médica dermatologista, seguindo todos os protocolos de segurança."
+  description: "Procedimento realizado exclusivamente por médica especialista, seguindo todos os protocolos de segurança."
 }, {
   icon: HeartHandshake,
   title: "Acompanhamento Completo",

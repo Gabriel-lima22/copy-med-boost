@@ -10,17 +10,17 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Clínica Lacerda | Dra. Lorena Lacerda - Dermatologista</title>
+        <title>Clínica Lacerda | Dra. Lorena Lacerda - Medicina Estética</title>
         <meta
           name="description"
-          content="Clínica Lacerda - Especializada em dermatologia e medicina estética. Laser CO2 Fracionado, Botox, Preenchimento Facial, Tratamento Capilar e Modelação de Glúteos com a Dra. Lorena Lacerda."
+          content="Clínica Lacerda - Especializada em medicina estética. Laser CO2 Fracionado, Botox, Preenchimento Facial, Tratamento Capilar e Modelação de Glúteos com a Dra. Lorena Lacerda."
         />
         <meta
           name="keywords"
-          content="dermatologista, medicina estética, laser co2, botox, preenchimento facial, tratamento capilar, modelação de glúteos, Dra Lorena Lacerda, Clínica Lacerda"
+          content="medicina estética, laser co2, botox, preenchimento facial, tratamento capilar, modelação de glúteos, Dra Lorena Lacerda, Clínica Lacerda"
         />
         <link rel="canonical" href="https://clinicalacerda.com.br" />
-        <meta property="og:title" content="Clínica Lacerda | Dra. Lorena Lacerda - Dermatologista" />
+        <meta property="og:title" content="Clínica Lacerda | Dra. Lorena Lacerda - Medicina Estética" />
         <meta
           property="og:description"
           content="Especializada em dermatologia e medicina estética. Tratamentos com tecnologia avançada e atendimento personalizado."
@@ -32,7 +32,7 @@ const Home = () => {
             "@type": "MedicalClinic",
             name: "Clínica Lacerda",
             description: "Clínica especializada em dermatologia e medicina estética",
-            medicalSpecialty: "Dermatology",
+            medicalSpecialty: "PlasticSurgery",
             availableService: [
               { "@type": "MedicalProcedure", name: "Laser CO2 Fracionado" },
               { "@type": "MedicalProcedure", name: "Botox" },

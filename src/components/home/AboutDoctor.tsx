@@ -9,7 +9,7 @@ const credentials = [
   {
     icon: GraduationCap,
     title: "Formação",
-    description: "Médica Dermatologista",
+    description: "Medicina Estética",
   },
   {
     icon: Award,
@@ -38,7 +38,7 @@ export const AboutDoctor = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-card">
               <img
                 src={doctorImage}
-                alt="Dra. Lorena Lacerda - Médica Dermatologista"
+                alt="Dra. Lorena Lacerda - Médica Especialista em Estética"
                 className="h-full w-full object-cover aspect-[4/5]"
               />
               
@@ -66,7 +66,7 @@ export const AboutDoctor = () => {
             </h2>
             
             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              Médica Dermatologista dedicada ao cuidado integral da pele e à realização 
+              Médica especialista em Medicina Estética, dedicada ao cuidado integral da pele e à realização 
               de procedimentos estéticos com excelência e segurança. Com formação sólida 
               e atualização constante, oferece tratamentos personalizados que respeitam 
               a individualidade de cada paciente.

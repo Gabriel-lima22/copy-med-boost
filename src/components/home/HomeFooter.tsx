@@ -15,7 +15,7 @@ export const HomeFooter = () => {
               Clínica Lacerda
             </h3>
             <p className="mb-6 max-w-md text-background/70">
-              Cuidado especializado em dermatologia e medicina estética, 
+              Cuidado especializado em medicina estética, 
               com tecnologia avançada e atendimento humanizado pela Dra. Lorena Lacerda.
             </p>
             <div className="flex gap-4">
