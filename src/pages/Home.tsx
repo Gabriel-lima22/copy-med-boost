@@ -32,6 +32,7 @@ const procedureShortcuts = [
   { slug: "tratamento-capilar", title: "Tratamento Capilar", description: "Combata a queda e fortaleça os fios", image: procCapilar },
   { slug: "epilacao-laser", title: "Epilação a Laser", description: "Depilação definitiva com tecnologia", image: procEpilacao },
   { slug: "skincare-manchas", title: "Skincare e Manchas", description: "Pele uniforme e radiante", image: procSkincare },
+  { slug: "mini-lipo-localizada", title: "Mini Lipo Localizada", description: "Contorno corporal com microcânulas", image: procMinilipo },
 ];
 
 const differentials = [

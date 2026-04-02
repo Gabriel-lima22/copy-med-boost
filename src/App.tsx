@@ -38,6 +38,7 @@ const App = () => (
             <Route path="/tratamento-capilar" element={<TratamentoCapilar />} />
             <Route path="/epilacao-laser" element={<EpilacaoLaser />} />
             <Route path="/skincare-manchas" element={<SkincareManchas />} />
+            <Route path="/mini-lipo-localizada" element={<MiniLipo />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
