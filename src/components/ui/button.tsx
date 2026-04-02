@@ -15,10 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Custom variants for landing page
-        cta: "bg-gradient-gold text-accent-foreground font-semibold shadow-glow hover:shadow-card hover:scale-[1.02] active:scale-[0.98]",
-        ctaOutline: "border-2 border-gold bg-transparent text-gold hover:bg-gold hover:text-accent-foreground font-medium",
-        hero: "bg-gradient-gold text-accent-foreground font-semibold text-base px-8 py-6 shadow-glow hover:shadow-card hover:scale-[1.02] active:scale-[0.98]",
+        cta: "bg-gradient-gold text-primary-foreground font-semibold shadow-glow hover:shadow-card hover:scale-[1.02] active:scale-[0.98]",
+        ctaOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground font-medium",
+        hero: "bg-gradient-gold text-primary-foreground font-semibold text-base px-8 py-6 shadow-glow hover:shadow-card hover:scale-[1.02] active:scale-[0.98]",
         heroOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground font-medium text-base px-8 py-6",
         whatsapp: "bg-[hsl(142_70%_45%)] text-[hsl(0_0%_100%)] font-semibold shadow-lg hover:bg-[hsl(142_70%_40%)] hover:scale-[1.02] active:scale-[0.98]",
       },
