@@ -31,6 +31,7 @@ export const PROCEDURE_WHATSAPP_MESSAGES: Record<string, string> = {
   "laser-co2-fracionado": "Olá! Vim pelo site e gostaria de saber mais sobre Laser CO2.",
   "tratamento-capilar": "Olá! Vim pelo site e gostaria de saber mais sobre Tratamento Capilar.",
   "epilacao-laser": "Olá! Vim pelo site e gostaria de saber mais sobre Epilação a Laser.",
-  "skincare-manchas": "Olá! Vim pelo site e gostaria de saber mais sobre Tratamento de Manchas.",
+  "skincare-manchas": "Olá! Vim pelo site e gostaria de saber mais sobre Tratamento de Skincare e Manchas.",
+  "mini-lipo-localizada": "Olá! Vim pelo site e gostaria de saber mais sobre Mini Lipo Localizada.",
   default: "Olá! Vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.",
 };
