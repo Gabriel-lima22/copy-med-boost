@@ -123,7 +123,7 @@ export const ProcedurePage = ({ procedureSlug }: ProcedurePageProps) => {
               >
                 <Button variant="cta" size="lg" className="gap-2">
                   <MessageCircle className="h-5 w-5" />
-                  Agende sua Avaliação
+                  Agende sua Consulta
                 </Button>
               </a>
             </div>
