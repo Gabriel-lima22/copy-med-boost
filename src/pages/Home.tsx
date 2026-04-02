@@ -20,6 +20,7 @@ import procLaser from "@/assets/proc-laser.jpg";
 import procCapilar from "@/assets/proc-capilar.jpg";
 import procEpilacao from "@/assets/proc-epilacao.jpg";
 import procSkincare from "@/assets/proc-skincare.jpg";
+import procMinilipo from "@/assets/proc-minilipo.jpg";
 
 const whatsappLink = createWhatsAppLink("Olá! Vim pelo site e gostaria de agendar uma avaliação.");
 
@@ -32,6 +33,7 @@ const procedureShortcuts = [
   { slug: "tratamento-capilar", title: "Tratamento Capilar", description: "Combata a queda e fortaleça os fios", image: procCapilar },
   { slug: "epilacao-laser", title: "Epilação a Laser", description: "Depilação definitiva com tecnologia", image: procEpilacao },
   { slug: "skincare-manchas", title: "Skincare e Manchas", description: "Pele uniforme e radiante", image: procSkincare },
+  { slug: "mini-lipo-localizada", title: "Mini Lipo Localizada", description: "Contorno corporal com microcânulas", image: procMinilipo },
 ];
 
 const differentials = [

@@ -13,6 +13,7 @@ import Bioestimuladores from "./pages/Bioestimuladores";
 import TratamentoCapilar from "./pages/TratamentoCapilar";
 import EpilacaoLaser from "./pages/EpilacaoLaser";
 import SkincareManchas from "./pages/SkincareManchas";
+import MiniLipo from "./pages/MiniLipo";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/tratamento-capilar" element={<TratamentoCapilar />} />
             <Route path="/epilacao-laser" element={<EpilacaoLaser />} />
             <Route path="/skincare-manchas" element={<SkincareManchas />} />
+            <Route path="/mini-lipo-localizada" element={<MiniLipo />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />

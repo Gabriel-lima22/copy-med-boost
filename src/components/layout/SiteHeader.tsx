@@ -15,6 +15,7 @@ const procedureLinks = [
   { href: "/tratamento-capilar", label: "Tratamento Capilar" },
   { href: "/epilacao-laser", label: "Epilação a Laser" },
   { href: "/skincare-manchas", label: "Skincare e Manchas" },
+  { href: "/mini-lipo-localizada", label: "Mini Lipo Localizada" },
 ];
 
 export const SiteHeader = () => {
