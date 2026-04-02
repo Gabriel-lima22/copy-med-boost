@@ -48,7 +48,7 @@ export const AboutDoctor = () => {
                   Dra. Lorena Lacerda
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  CRM-PA 15063 | RQE 10666
+                  CRM-PA 15626
                 </p>
               </div>
             </div>
