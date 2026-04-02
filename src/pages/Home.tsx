@@ -363,7 +363,7 @@ const Home = () => {
               <ScrollReveal>
                 <div className="overflow-hidden rounded-xl border border-border">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15866.91!2d-49.1178!3d-5.3686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c7a5b9515e7b%3A0x2e5e9d5a89d24b89!2sMarab%C3%A1%2C%20PA!5e0!3m2!1spt-BR!2sbr!4v1"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.4!2d-49.0964815!3d-5.3466961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c3a1576e22b7b9%3A0xc0ae068729c501f9!2sCl%C3%ADnica%20Lacerda!5e0!3m2!1spt-BR!2sbr!4v1"
                     width="100%"
                     height="400"
                     style={{ border: 0 }}
