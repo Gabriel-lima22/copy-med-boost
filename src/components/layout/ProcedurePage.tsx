@@ -27,6 +27,7 @@ import procLaser from "@/assets/proc-laser.jpg";
 import procCapilar from "@/assets/proc-capilar.jpg";
 import procEpilacao from "@/assets/proc-epilacao.jpg";
 import procSkincare from "@/assets/proc-skincare.jpg";
+import procMinilipo from "@/assets/proc-minilipo.jpg";
 
 const heroImages: Record<string, string> = {
   "harmonizacao-facial": procHarmonizacao,
