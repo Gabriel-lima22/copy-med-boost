@@ -38,6 +38,7 @@ const heroImages: Record<string, string> = {
   "tratamento-capilar": procCapilar,
   "epilacao-laser": procEpilacao,
   "skincare-manchas": procSkincare,
+  "mini-lipo-localizada": procMinilipo,
 };
 
 interface ProcedurePageProps {
