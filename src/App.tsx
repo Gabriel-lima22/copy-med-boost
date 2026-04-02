@@ -13,6 +13,7 @@ import Bioestimuladores from "./pages/Bioestimuladores";
 import TratamentoCapilar from "./pages/TratamentoCapilar";
 import EpilacaoLaser from "./pages/EpilacaoLaser";
 import SkincareManchas from "./pages/SkincareManchas";
+import MiniLipo from "./pages/MiniLipo";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
