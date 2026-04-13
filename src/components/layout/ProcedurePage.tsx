@@ -258,29 +258,6 @@ export const ProcedurePage = ({ procedureSlug }: ProcedurePageProps) => {
           </div>
         </section>
 
-        {/* Before & After Placeholder */}
-        <section className="py-20 lg:py-24" style={{ background: "hsl(0 0% 7%)" }}>
-          <div className="container">
-            <ScrollReveal>
-              <h2 className="mb-14 text-center font-heading text-3xl font-semibold text-foreground md:text-4xl">
-                Antes e Depois
-              </h2>
-            </ScrollReveal>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((n) => (
-                <ScrollReveal key={n} delay={n * 0.1}>
-                  <div className="flex aspect-[4/3] items-center justify-center rounded-xl border border-border/50"
-                    style={{ background: "hsl(0 0% 10%)" }}
-                  >
-                    <p className="px-6 text-center font-body text-sm text-muted-foreground/50">
-                      Fotos de resultados reais em breve
-                    </p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* FAQ */}
         <section className="py-20 lg:py-24">
