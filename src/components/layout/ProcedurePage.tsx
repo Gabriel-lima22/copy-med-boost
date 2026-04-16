@@ -31,7 +31,7 @@ import procMinilipo from "@/assets/proc-minilipo.jpg";
 
 const heroImages: Record<string, string> = {
   "harmonizacao-facial": procHarmonizacao,
-  "toxina-botulinica-botox": procBotox,
+  "toxina-botulinica": procBotox,
   "preenchimento-labial": procLabial,
   "bioestimuladores-colageno": procBioestimuladores,
   "laser-co2-fracionado": procLaser,

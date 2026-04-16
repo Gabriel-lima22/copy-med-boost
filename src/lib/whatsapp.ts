@@ -25,7 +25,7 @@ export const handleWhatsAppClick = (
 
 export const PROCEDURE_WHATSAPP_MESSAGES: Record<string, string> = {
   "harmonizacao-facial": "Oi, vim pelo Google e tenho interesse em Harmonização Facial.",
-  "toxina-botulinica-botox": "Oi, vim pelo Google e tenho interesse em Botox.",
+  "toxina-botulinica": "Oi, vim pelo Google e tenho interesse em Toxina Botulínica.",
   "preenchimento-labial": "Oi, vim pelo Google e tenho interesse em Preenchimento Labial.",
   "bioestimuladores-colageno": "Oi, vim pelo Google e tenho interesse em Bioestimuladores de Colágeno.",
   "laser-co2-fracionado": "Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.",
@@ -40,7 +40,7 @@ export const PROCEDURE_WHATSAPP_MESSAGES: Record<string, string> = {
 export const ROUTE_WHATSAPP_MESSAGES: Record<string, string> = {
   "/": "Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.",
   "/harmonizacao-facial": "Oi, vim pelo Google e tenho interesse em Harmonização Facial.",
-  "/toxina-botulinica-botox": "Oi, vim pelo Google e tenho interesse em Botox.",
+  "/toxina-botulinica": "Oi, vim pelo Google e tenho interesse em Toxina Botulínica.",
   "/preenchimento-labial": "Oi, vim pelo Google e tenho interesse em Preenchimento Labial.",
   "/bioestimuladores-colageno": "Oi, vim pelo Google e tenho interesse em Bioestimuladores de Colágeno.",
   "/laser-co2-fracionado": "Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.",

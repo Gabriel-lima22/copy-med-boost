@@ -6,7 +6,7 @@ import { getWhatsAppLinkForRoute, handleWhatsAppClick } from "@/lib/whatsapp";
 
 const procedureLinks = [
   { href: "/harmonizacao-facial", label: "Harmonização Facial" },
-  { href: "/toxina-botulinica-botox", label: "Toxina Botulínica" },
+  { href: "/toxina-botulinica", label: "Toxina Botulínica" },
   { href: "/preenchimento-labial", label: "Preenchimento Labial" },
   { href: "/bioestimuladores-colageno", label: "Bioestimuladores" },
   { href: "/laser-co2-fracionado", label: "Laser CO2 Fracionado" },

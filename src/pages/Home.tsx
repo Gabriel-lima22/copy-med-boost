@@ -26,7 +26,7 @@ const whatsappLink = createWhatsAppLink("Olá! Vim pelo site e gostaria de agend
 
 const procedureShortcuts = [
   { slug: "harmonizacao-facial", title: "Harmonização Facial", description: "Equilíbrio e proporção para o seu rosto", image: procHarmonizacao },
-  { slug: "toxina-botulinica-botox", title: "Toxina Botulínica", description: "Suavize linhas de expressão", image: procBotox },
+  { slug: "toxina-botulinica", title: "Toxina Botulínica", description: "Suavize rugas e linhas de expressão", image: procBotox },
   { slug: "preenchimento-labial", title: "Preenchimento Labial", description: "Lábios naturais e definidos", image: procLabial },
   { slug: "bioestimuladores-colageno", title: "Bioestimuladores", description: "Rejuvenescimento de dentro pra fora", image: procBioestimuladores },
   { slug: "laser-co2-fracionado", title: "Laser CO2 Fracionado", description: "Renovação profunda da pele", image: procLaser },
@@ -45,7 +45,7 @@ const differentials = [
 
 const testimonials = [
   { name: "Maria C.", text: "Amei o resultado da harmonização! Super natural e a Dra. Lorena é extremamente atenciosa.", procedure: "Harmonização Facial", stars: 5 },
-  { name: "Ana P.", text: "O botox ficou perfeito, ninguém percebe que fiz. Resultado super natural como eu queria.", procedure: "Toxina Botulínica", stars: 5 },
+  { name: "Ana P.", text: "A toxina botulínica ficou perfeita, ninguém percebe que fiz. Resultado super natural como eu queria.", procedure: "Toxina Botulínica", stars: 5 },
   { name: "Juliana S.", text: "Fiz o Laser CO2 e minha pele melhorou muito! As manchas clarearam bastante. Recomendo demais.", procedure: "Laser CO2 Fracionado", stars: 5 },
   { name: "Camila R.", text: "O atendimento é incrível, me senti muito segura. Os resultados superaram minhas expectativas!", procedure: "Preenchimento Labial", stars: 5 },
   { name: "Fernanda L.", text: "Profissional maravilhosa! Fez toda a diferença na minha autoestima. Consultório lindo e acolhedor.", procedure: "Bioestimuladores", stars: 5 },
@@ -89,7 +89,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Clínica Lacerda | Dra. Lorena Lacerda - Medicina Estética em Marabá</title>
-        <meta name="description" content="Clínica Lacerda — Medicina Estética em Marabá/PA com Dra. Lorena Lacerda (CRM 15626). Harmonização facial, botox, laser CO2 e mais. Agende sua avaliação." />
+        <meta name="description" content="Clínica Lacerda — Medicina Estética em Marabá/PA com Dra. Lorena Lacerda (CRM 15626). Harmonização facial, toxina botulínica, laser CO2 e mais. Agende sua avaliação." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://clinicalacerda.com" />
         <meta property="og:title" content="Clínica Lacerda | Medicina Estética em Marabá" />
