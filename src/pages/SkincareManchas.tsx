@@ -297,7 +297,7 @@ const SkincareManchas = () => (
             {[
               { slug: "laser-co2-fracionado", title: "Laser CO2 Fracionado", desc: "Renovação profunda da pele" },
               { slug: "bioestimuladores-colageno", title: "Bioestimuladores", desc: "Rejuvenescimento de dentro pra fora" },
-              { slug: "toxina-botulinica-botox", title: "Toxina Botulínica", desc: "Suavize linhas de expressão" },
+              { slug: "toxina-botulinica", title: "Toxina Botulínica", desc: "Suavize rugas e linhas de expressão" },
             ].map((r, i) => (
               <ScrollReveal key={r.slug} delay={i * 0.1}>
                 <Link to={`/${r.slug}`} className="group block rounded-xl border border-border/50 p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-glow" style={{ background: "rgba(255,255,255,0.03)" }}>

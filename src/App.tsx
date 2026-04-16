@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import LaserCO2 from "./pages/LaserCO2";
@@ -31,7 +31,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/harmonizacao-facial" element={<HarmonizacaoFacial />} />
-            <Route path="/toxina-botulinica-botox" element={<ToxinaBotulinica />} />
+            <Route path="/toxina-botulinica" element={<ToxinaBotulinica />} />
+            <Route path="/toxina-botulinica-botox" element={<Navigate to="/toxina-botulinica" replace />} />
             <Route path="/preenchimento-labial" element={<PreenchimentoLabial />} />
             <Route path="/bioestimuladores-colageno" element={<Bioestimuladores />} />
             <Route path="/laser-co2-fracionado" element={<LaserCO2 />} />
