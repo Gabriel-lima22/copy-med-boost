@@ -1,5 +1,5 @@
 import { Instagram, MessageCircle, MapPin, Clock } from "lucide-react";
-import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
+import { createWhatsAppLink, handleWhatsAppClick, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const whatsappLink = createWhatsAppLink("Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.");
 
