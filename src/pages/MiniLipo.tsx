@@ -35,7 +35,7 @@ import areaCostas from "@/assets/area-costas.jpg";
 import areaBracos from "@/assets/area-bracos.jpg";
 import areaCoxas from "@/assets/area-coxas.jpg";
 
-const whatsappLink = "https://wa.me/5594991521617?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Mini%20Lipo%20Localizada.";
+const whatsappLink = "https://wa.me/5594992693532?text=Oi%2C%20vim%20pelo%20Google%20e%20tenho%20interesse%20em%20Mini%20Lipo%20Localizada.";
 
 const areas = [
   { title: "Abdômen", desc: "Gordura abdominal resistente", image: areaAbdomen },

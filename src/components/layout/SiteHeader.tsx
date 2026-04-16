@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
-
-const whatsappLink = createWhatsAppLink("Olá! Vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.");
+import { getWhatsAppLinkForRoute, handleWhatsAppClick } from "@/lib/whatsapp";
 
 const procedureLinks = [
   { href: "/harmonizacao-facial", label: "Harmonização Facial" },
@@ -23,6 +21,7 @@ export const SiteHeader = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProceduresOpen, setIsProceduresOpen] = useState(false);
   const location = useLocation();
+  const whatsappLink = getWhatsAppLinkForRoute(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -48,7 +47,6 @@ export const SiteHeader = () => {
           Clínica Lacerda
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 lg:flex">
           <Link
             to="/"
@@ -57,7 +55,6 @@ export const SiteHeader = () => {
             Início
           </Link>
 
-          {/* Procedures Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setIsProceduresOpen(true)}
@@ -116,7 +113,6 @@ export const SiteHeader = () => {
           </a>
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           className="lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -130,7 +126,6 @@ export const SiteHeader = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute left-0 right-0 top-full max-h-[80vh] overflow-y-auto border-b border-border bg-background/98 backdrop-blur-md lg:hidden">
           <nav className="container flex flex-col gap-1 py-6">

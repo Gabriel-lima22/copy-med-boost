@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 import draLorena from "@/assets/dra-lorena.jpg";
 
-const whatsappLink = createWhatsAppLink("Olá! Vim pelo site e gostaria de agendar uma avaliação.");
+const whatsappLink = createWhatsAppLink("Oi, vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.");
 
 const physicianSchema = {
   "@context": "https://schema.org",

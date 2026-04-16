@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "5594991521617";
+export const WHATSAPP_NUMBER = "5594992693532";
 
 export const createWhatsAppLink = (message: string) => {
   const encodedMessage = encodeURIComponent(message);
@@ -24,14 +24,35 @@ export const handleWhatsAppClick = (
 };
 
 export const PROCEDURE_WHATSAPP_MESSAGES: Record<string, string> = {
-  "harmonizacao-facial": "Olá! Vim pelo site e gostaria de saber mais sobre Harmonização Facial.",
-  "toxina-botulinica-botox": "Olá! Vim pelo site e gostaria de saber mais sobre Botox.",
-  "preenchimento-labial": "Olá! Vim pelo site e gostaria de saber mais sobre Preenchimento Labial.",
-  "bioestimuladores-colageno": "Olá! Vim pelo site e gostaria de saber mais sobre Bioestimuladores.",
-  "laser-co2-fracionado": "Olá! Vim pelo site e gostaria de saber mais sobre Laser CO2.",
-  "tratamento-capilar": "Olá! Vim pelo site e gostaria de saber mais sobre Tratamento Capilar.",
-  "epilacao-laser": "Olá! Vim pelo site e gostaria de saber mais sobre Epilação a Laser.",
-  "skincare-manchas": "Olá! Vim pelo site e gostaria de saber mais sobre Tratamento de Skincare e Manchas.",
-  "mini-lipo-localizada": "Olá! Vim pelo site e gostaria de saber mais sobre Mini Lipo Localizada.",
-  default: "Olá! Vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.",
+  "harmonizacao-facial": "Oi, vim pelo Google e tenho interesse em Harmonização Facial.",
+  "toxina-botulinica-botox": "Oi, vim pelo Google e tenho interesse em Botox.",
+  "preenchimento-labial": "Oi, vim pelo Google e tenho interesse em Preenchimento Labial.",
+  "bioestimuladores-colageno": "Oi, vim pelo Google e tenho interesse em Bioestimuladores de Colágeno.",
+  "laser-co2-fracionado": "Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.",
+  "tratamento-capilar": "Oi, vim pelo Google e tenho interesse em Tratamento Capilar.",
+  "epilacao-laser": "Oi, vim pelo Google e tenho interesse em Epilação a Laser.",
+  "skincare-manchas": "Oi, vim pelo Google e tenho interesse em Tratamento de Manchas e Skincare.",
+  "mini-lipo-localizada": "Oi, vim pelo Google e tenho interesse em Mini Lipo Localizada.",
+  default: "Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.",
+};
+
+/** Map route paths to WhatsApp messages */
+export const ROUTE_WHATSAPP_MESSAGES: Record<string, string> = {
+  "/": "Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.",
+  "/harmonizacao-facial": "Oi, vim pelo Google e tenho interesse em Harmonização Facial.",
+  "/toxina-botulinica-botox": "Oi, vim pelo Google e tenho interesse em Botox.",
+  "/preenchimento-labial": "Oi, vim pelo Google e tenho interesse em Preenchimento Labial.",
+  "/bioestimuladores-colageno": "Oi, vim pelo Google e tenho interesse em Bioestimuladores de Colágeno.",
+  "/laser-co2-fracionado": "Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.",
+  "/tratamento-capilar": "Oi, vim pelo Google e tenho interesse em Tratamento Capilar.",
+  "/epilacao-laser": "Oi, vim pelo Google e tenho interesse em Epilação a Laser.",
+  "/skincare-manchas": "Oi, vim pelo Google e tenho interesse em Tratamento de Manchas e Skincare.",
+  "/mini-lipo-localizada": "Oi, vim pelo Google e tenho interesse em Mini Lipo Localizada.",
+  "/contato": "Oi, vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.",
+  "/sobre": "Oi, vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.",
+};
+
+export const getWhatsAppLinkForRoute = (pathname: string) => {
+  const message = ROUTE_WHATSAPP_MESSAGES[pathname] || ROUTE_WHATSAPP_MESSAGES["/"];
+  return createWhatsAppLink(message);
 };

@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-skin.jpg";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma avaliação para o tratamento com Botox.");
+const whatsappLink = createWhatsAppLink("Oi, vim pelo Google e tenho interesse em Botox.");
 
 export const BotoxHero = () => {
   return (

@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
-import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
+import { getWhatsAppLinkForRoute, handleWhatsAppClick } from "@/lib/whatsapp";
 import { useState } from "react";
-
-const whatsappLink = createWhatsAppLink("Olá! Vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.");
+import { useLocation } from "react-router-dom";
 
 export const FloatingWhatsApp = () => {
   const [showTooltip, setShowTooltip] = useState(false);
+  const location = useLocation();
+  const whatsappLink = getWhatsAppLinkForRoute(location.pathname);
 
   return (
     <div className="fixed bottom-6 right-6 z-[9999]">
-      {/* Tooltip */}
       {showTooltip && (
         <div className="absolute bottom-full right-0 mb-3 whitespace-nowrap rounded-lg border border-border bg-card px-4 py-2 font-body text-sm text-foreground shadow-card">
           Fale conosco
@@ -28,7 +28,6 @@ export const FloatingWhatsApp = () => {
         onMouseLeave={() => setShowTooltip(false)}
       >
         <div className="relative">
-          {/* Pulse ring */}
           <div className="absolute inset-0 animate-ping rounded-full opacity-20" style={{ background: "#25D366" }} />
           <Button
             variant="whatsapp"

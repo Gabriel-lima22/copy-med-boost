@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail, Instagram, Clock, MessageCircle } from "lucide-react";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const whatsappLink = createWhatsAppLink("Olá! Gostaria de mais informações sobre a Clínica Lacerda.");
+const whatsappLink = createWhatsAppLink("Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.");
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
