@@ -3,7 +3,7 @@ import { MessageCircle, Award, GraduationCap, Heart } from "lucide-react";
 import doctorImage from "@/assets/dra-lorena.jpg";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma consulta com a Dra. Lorena Lacerda.");
+const whatsappLink = createWhatsAppLink("Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.");
 
 const credentials = [
   {

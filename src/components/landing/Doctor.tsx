@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const whatsappLink = createWhatsAppLink("Olá! Gostaria de agendar uma avaliação com a Dra. Lorena Lacerda.");
+const whatsappLink = createWhatsAppLink("Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.");
 
 export const Doctor = () => {
   return (

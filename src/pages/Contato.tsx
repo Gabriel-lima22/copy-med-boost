@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, MapPin, Phone, Clock, Instagram } from "lucide-react";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
-const whatsappLink = createWhatsAppLink("Olá! Vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.");
+const whatsappLink = createWhatsAppLink("Oi, vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.");
 
 const Contato = () => {
   return (

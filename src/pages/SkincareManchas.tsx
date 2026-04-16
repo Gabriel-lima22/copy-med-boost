@@ -22,7 +22,7 @@ import imgLimpeza from "@/assets/skincare-limpeza.jpg";
 import imgProdutos from "@/assets/skincare-produtos.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
-const whatsappLink = "https://wa.me/5594991521617?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20Tratamento%20de%20Skincare%20e%20Manchas.";
+const whatsappLink = "https://wa.me/5594992693532?text=Oi%2C%20vim%20pelo%20Google%20e%20tenho%20interesse%20em%20Tratamento%20de%20Manchas%20e%20Skincare.";
 
 const conditions = [
   { icon: Droplet, title: "Melasma", desc: "Manchas escuras no rosto causadas por hormônios e sol" },
