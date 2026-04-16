@@ -58,12 +58,12 @@ export const procedures: Record<string, ProcedureData> = {
   },
   "toxina-botulinica-botox": {
     slug: "toxina-botulinica-botox",
-    title: "Toxina Botulínica (Botox) em Marabá",
+    title: "Toxina Botulínica em Marabá",
     shortTitle: "Toxina Botulínica",
     subtitle: "Suavize linhas de expressão com resultados naturais e seguros",
     shortDescription: "Suavize linhas de expressão",
     description: [
-      "A toxina botulínica, popularmente conhecida como Botox, é um dos procedimentos estéticos mais realizados no mundo. Ela atua relaxando temporariamente a musculatura facial, suavizando rugas e linhas de expressão.",
+      "A toxina botulínica, é um dos procedimentos estéticos mais realizados no mundo. Ela atua relaxando temporariamente a musculatura facial, suavizando rugas e linhas de expressão.",
       "Na Clínica Lacerda, a Dra. Lorena Lacerda utiliza técnicas precisas para proporcionar um resultado natural, mantendo a expressividade facial e prevenindo o envelhecimento precoce.",
       "Os resultados começam a aparecer entre 7 e 14 dias após a aplicação e podem durar de 4 a 6 meses, variando de acordo com cada organismo."
     ],
@@ -87,11 +87,11 @@ export const procedures: Record<string, ProcedureData> = {
     sessionInfo: "Sessão de aproximadamente 20 minutos",
     recoveryInfo: "Sem tempo de recuperação necessário",
     faq: [
-      { question: "O Botox dói?", answer: "A aplicação é feita com agulhas ultrafinas e pode causar apenas um leve desconforto. Muitos pacientes consideram o procedimento bastante tolerável." },
-      { question: "Com quanto tempo vejo o resultado do Botox?", answer: "Os resultados começam a aparecer entre 7 e 14 dias após a aplicação." },
-      { question: "Quanto tempo dura o efeito do Botox?", answer: "O efeito pode durar de 4 a 6 meses, variando de acordo com as características individuais de cada paciente." },
+      { question: "O Procedimento dói?", answer: "A aplicação é feita com agulhas ultrafinas e pode causar apenas um leve desconforto. Muitos pacientes consideram o procedimento bastante tolerável." },
+      { question: "Com quanto tempo vejo o resultado ?", answer: "Os resultados começam a aparecer entre 7 e 14 dias após a aplicação." },
+      { question: "Quanto tempo dura o efeito?", answer: "O efeito pode durar de 4 a 6 meses, variando de acordo com as características individuais de cada paciente." },
       { question: "O rosto fica paralisado?", answer: "Quando aplicado por profissional qualificado com técnica adequada, o resultado é natural, preservando as expressões faciais." },
-      { question: "A partir de que idade posso fazer Botox?", answer: "A indicação é individualizada e definida em consulta médica. O Botox pode ser utilizado tanto para tratamento quanto para prevenção." }
+      { question: "A partir de que idade posso fazer?", answer: "A indicação é individualizada e definida em consulta médica. O Botox pode ser utilizado tanto para tratamento quanto para prevenção." }
     ],
     relatedProcedures: ["harmonizacao-facial", "preenchimento-labial", "bioestimuladores-colageno"],
     metaTitle: "Botox em Marabá - Toxina Botulínica | Clínica Lacerda | Dra. Lorena Lacerda",
