@@ -20,7 +20,7 @@ import ctaBg from "@/assets/cta-bg.jpg";
 
 // Procedure hero images mapping
 import procHarmonizacao from "@/assets/proc-harmonizacao.jpg";
-import procBotox from "@/assets/proc-botox.jpg";
+import procHarmonizacao2 from "@/assets/proc-harmonizacao.jpg";
 import procLabial from "@/assets/proc-labial.jpg";
 import procBioestimuladores from "@/assets/proc-bioestimuladores.jpg";
 import procLaser from "@/assets/proc-laser.jpg";
@@ -31,7 +31,6 @@ import procMinilipo from "@/assets/proc-minilipo.jpg";
 
 const heroImages: Record<string, string> = {
   "harmonizacao-facial": procHarmonizacao,
-  "toxina-botulinica": procBotox,
   "preenchimento-labial": procLabial,
   "bioestimuladores-colageno": procBioestimuladores,
   "laser-co2-fracionado": procLaser,
@@ -345,10 +344,10 @@ export const ProcedurePage = ({ procedureSlug }: ProcedurePageProps) => {
           <div className="container relative z-10 text-center">
             <ScrollReveal>
               <h2 className="mb-6 font-heading text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
-                Agende agora e transforme sua autoestima
+                Agende sua avaliação personalizada
               </h2>
               <p className="mx-auto mb-10 max-w-xl font-body text-lg text-muted-foreground">
-                Entre em contato e agende sua avaliação personalizada com a Dra. Lorena Lacerda.
+                Entre em contato e converse com a Dra. Lorena Lacerda sobre o tratamento ideal para você.
               </p>
               <a
                 href={whatsappLink}
