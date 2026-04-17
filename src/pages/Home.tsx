@@ -13,7 +13,7 @@ import heroHome from "@/assets/hero-home.jpg";
 import bgTestimonials from "@/assets/bg-testimonials.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 import procHarmonizacao from "@/assets/proc-harmonizacao.jpg";
-import procBotox from "@/assets/proc-botox.jpg";
+
 import procLabial from "@/assets/proc-labial.jpg";
 import procBioestimuladores from "@/assets/proc-bioestimuladores.jpg";
 import procLaser from "@/assets/proc-laser.jpg";
@@ -25,14 +25,13 @@ import procMinilipo from "@/assets/proc-minilipo.jpg";
 const whatsappLink = createWhatsAppLink("Olá! Vim pelo site e gostaria de agendar uma avaliação.");
 
 const procedureShortcuts = [
-  { slug: "harmonizacao-facial", title: "Harmonização Facial", description: "Equilíbrio e proporção para o seu rosto", image: procHarmonizacao },
-  { slug: "toxina-botulinica", title: "Toxina Botulínica", description: "Suavize rugas e linhas de expressão", image: procBotox },
-  { slug: "preenchimento-labial", title: "Preenchimento Labial", description: "Lábios naturais e definidos", image: procLabial },
-  { slug: "bioestimuladores-colageno", title: "Bioestimuladores", description: "Rejuvenescimento de dentro pra fora", image: procBioestimuladores },
-  { slug: "laser-co2-fracionado", title: "Laser CO2 Fracionado", description: "Renovação profunda da pele", image: procLaser },
-  { slug: "tratamento-capilar", title: "Tratamento Capilar", description: "Combata a queda e fortaleça os fios", image: procCapilar },
-  { slug: "epilacao-laser", title: "Epilação a Laser", description: "Depilação definitiva com tecnologia", image: procEpilacao },
-  { slug: "skincare-manchas", title: "Skincare e Manchas", description: "Pele uniforme e radiante", image: procSkincare },
+  { slug: "harmonizacao-facial", title: "Harmonização Facial", description: "Equilíbrio e naturalidade para o seu rosto", image: procHarmonizacao },
+  { slug: "preenchimento-labial", title: "Preenchimento Labial", description: "Volume e definição natural para os lábios", image: procLabial },
+  { slug: "bioestimuladores-colageno", title: "Bioestimuladores de Colágeno", description: "Firmeza e luminosidade de dentro pra fora", image: procBioestimuladores },
+  { slug: "laser-co2-fracionado", title: "Laser CO2 Fracionado", description: "Renovação profunda da pele com tecnologia", image: procLaser },
+  { slug: "tratamento-capilar", title: "Tratamento Capilar", description: "Protocolos para fios mais fortes e saudáveis", image: procCapilar },
+  { slug: "epilacao-laser", title: "Epilação a Laser", description: "Pele lisa com depilação definitiva", image: procEpilacao },
+  { slug: "skincare-manchas", title: "Skincare e Manchas", description: "Cuidados especializados para uma pele radiante", image: procSkincare },
   { slug: "mini-lipo-localizada", title: "Mini Lipo Localizada", description: "Contorno corporal com microcânulas", image: procMinilipo },
 ];
 
@@ -45,8 +44,8 @@ const differentials = [
 
 const testimonials = [
   { name: "Maria C.", text: "Amei o resultado da harmonização! Super natural e a Dra. Lorena é extremamente atenciosa.", procedure: "Harmonização Facial", stars: 5 },
-  { name: "Ana P.", text: "A toxina botulínica ficou perfeita, ninguém percebe que fiz. Resultado super natural como eu queria.", procedure: "Toxina Botulínica", stars: 5 },
-  { name: "Juliana S.", text: "Fiz o Laser CO2 e minha pele melhorou muito! As manchas clarearam bastante. Recomendo demais.", procedure: "Laser CO2 Fracionado", stars: 5 },
+  { name: "Ana P.", text: "O atendimento foi maravilhoso e o resultado ficou super natural, exatamente como eu queria.", procedure: "Harmonização Facial", stars: 5 },
+  { name: "Juliana S.", text: "Fiz o Laser CO2 e minha pele melhorou muito! Recomendo demais a Dra. Lorena.", procedure: "Laser CO2 Fracionado", stars: 5 },
   { name: "Camila R.", text: "O atendimento é incrível, me senti muito segura. Os resultados superaram minhas expectativas!", procedure: "Preenchimento Labial", stars: 5 },
   { name: "Fernanda L.", text: "Profissional maravilhosa! Fez toda a diferença na minha autoestima. Consultório lindo e acolhedor.", procedure: "Bioestimuladores", stars: 5 },
 ];
@@ -89,7 +88,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Clínica Lacerda | Dra. Lorena Lacerda - Medicina Estética em Marabá</title>
-        <meta name="description" content="Clínica Lacerda — Medicina Estética em Marabá/PA com Dra. Lorena Lacerda (CRM 15626). Harmonização facial, toxina botulínica, laser CO2 e mais. Agende sua avaliação." />
+        <meta name="description" content="Clínica Lacerda — Medicina Estética em Marabá/PA com Dra. Lorena Lacerda (CRM 15626). Harmonização facial, preenchimento, bioestimuladores, laser CO2 e mais. Agende sua avaliação." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://clinicalacerda.com" />
         <meta property="og:title" content="Clínica Lacerda | Medicina Estética em Marabá" />
@@ -442,10 +441,10 @@ const Home = () => {
           <div className="container relative z-10 text-center">
             <ScrollReveal>
               <h2 className="mb-6 font-heading text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
-                Transforme sua autoestima hoje
+                Agende sua avaliação personalizada
               </h2>
               <p className="mx-auto mb-10 max-w-xl font-body text-lg text-muted-foreground">
-                Agende sua avaliação personalizada com a Dra. Lorena Lacerda e descubra o tratamento ideal para você.
+                Converse com a Dra. Lorena Lacerda e conheça os tratamentos disponíveis para você.
               </p>
               <a
                 href={whatsappLink}
