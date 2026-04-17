@@ -24,15 +24,15 @@ export const procedures: Record<string, ProcedureData> = {
     subtitle: "Equilíbrio e proporção para o seu rosto com técnicas minimamente invasivas",
     shortDescription: "Equilíbrio e proporção para o seu rosto",
     description: [
-      "A harmonização facial é um conjunto de procedimentos estéticos que visa equilibrar as proporções do rosto, proporcionando uma aparência mais harmônica e natural. Cada paciente recebe uma avaliação individualizada para identificar as melhores técnicas para seu caso.",
-      "Na Clínica Lacerda, a Dra. Lorena Lacerda combina diferentes técnicas como preenchimentos com ácido hialurônico, toxina botulínica e bioestimuladores de colágeno para criar um plano de tratamento personalizado.",
+      "A harmonização facial é um conjunto de procedimentos personalizados que podem incluir preenchimentos, bioestimuladores e aplicações para relaxamento muscular e suavização de linhas de expressão. Cada protocolo é montado de forma individualizada pela Dra. Lorena, respeitando as proporções naturais do rosto e as necessidades de cada paciente.",
+      "Na Clínica Lacerda, a Dra. Lorena Lacerda combina técnicas como preenchimentos com ácido hialurônico, bioestimuladores de colágeno e aplicações para relaxamento muscular facial para criar um plano de tratamento personalizado.",
       "O objetivo é realçar a beleza natural de cada paciente, respeitando suas características individuais e proporcionando resultados seguros e satisfatórios."
     ],
     indications: [
-      "Assimetria facial",
-      "Perda de volume facial",
-      "Contorno mandibular pouco definido",
-      "Desejo de harmonizar proporções do rosto"
+      "Realce das proporções faciais",
+      "Volume facial mais equilibrado",
+      "Contorno mandibular mais definido",
+      "Suavização de linhas de expressão"
     ],
     benefits: [
       { title: "Resultado Natural", description: "Técnicas que respeitam suas características individuais para um resultado harmonioso" },
@@ -47,56 +47,14 @@ export const procedures: Record<string, ProcedureData> = {
       { title: "Acompanhamento", description: "Retorno para avaliação dos resultados e ajustes se necessário" }
     ],
     faq: [
-      { question: "O que é harmonização facial?", answer: "A harmonização facial é um conjunto de procedimentos estéticos minimamente invasivos que visa equilibrar as proporções do rosto, como preenchimentos, toxina botulínica e bioestimuladores de colágeno." },
+      { question: "O que é harmonização facial?", answer: "A harmonização facial é um conjunto de procedimentos estéticos minimamente invasivos que visa equilibrar as proporções do rosto, como preenchimentos, bioestimuladores de colágeno e aplicações para relaxamento muscular." },
       { question: "A harmonização facial dói?", answer: "Os procedimentos são realizados com anestesia local ou tópica, proporcionando conforto durante a aplicação. A sensibilidade varia de pessoa para pessoa." },
       { question: "Quanto tempo dura o resultado?", answer: "Os resultados podem variar de acordo com as técnicas utilizadas e as características individuais de cada paciente, podendo durar de 6 meses a 2 anos." },
       { question: "Quem pode fazer harmonização facial?", answer: "A indicação é feita após avaliação médica individualizada. É importante que o paciente esteja em boas condições de saúde e tenha expectativas realistas." }
     ],
-    relatedProcedures: ["toxina-botulinica", "preenchimento-labial", "bioestimuladores-colageno"],
+    relatedProcedures: ["preenchimento-labial", "bioestimuladores-colageno", "skincare-manchas"],
     metaTitle: "Harmonização Facial em Marabá - Clínica Lacerda | Dra. Lorena Lacerda",
     metaDescription: "Harmonização facial com resultados naturais em Marabá/PA. Dra. Lorena Lacerda — CRM 15626. Agende sua avaliação."
-  },
-  "toxina-botulinica": {
-    slug: "toxina-botulinica",
-    title: "Toxina Botulínica em Marabá",
-    shortTitle: "Toxina Botulínica",
-    subtitle: "Suavize linhas de expressão com resultados naturais e seguros",
-    shortDescription: "Suavize rugas e linhas de expressão",
-    description: [
-      "A toxina botulínica — popularmente conhecida como Botox® — é uma proteína purificada utilizada para suavizar rugas e linhas de expressão de forma segura e minimamente invasiva. É um dos procedimentos estéticos mais realizados no mundo, atuando ao relaxar temporariamente a musculatura facial.",
-      "Na Clínica Lacerda, a Dra. Lorena Lacerda utiliza técnicas precisas para proporcionar um resultado natural, mantendo a expressividade facial e prevenindo o envelhecimento precoce.",
-      "Os resultados começam a aparecer entre 7 e 14 dias após a aplicação e podem durar de 4 a 6 meses, variando de acordo com cada organismo."
-    ],
-    indications: [
-      "Rugas na testa e glabela",
-      "Pés de galinha",
-      "Sorriso gengival",
-      "Prevenção do envelhecimento"
-    ],
-    benefits: [
-      { title: "Resultado Rápido", description: "Resultados visíveis em 7 a 14 dias após a aplicação" },
-      { title: "Sem Tempo de Parada", description: "Retorno imediato às atividades normais após o procedimento" },
-      { title: "Prevenção", description: "Auxilia na prevenção de rugas mais profundas ao longo do tempo" },
-      { title: "Natural", description: "Técnica que preserva a expressividade e naturalidade do rosto" }
-    ],
-    steps: [
-      { title: "Consulta", description: "Avaliação da musculatura facial e definição dos pontos de aplicação" },
-      { title: "Aplicação", description: "Procedimento rápido, em torno de 15-20 minutos, com agulhas ultrafinas" },
-      { title: "Resultado", description: "Efeito progressivo nos primeiros 7-14 dias" }
-    ],
-    sessionInfo: "Sessão de aproximadamente 20 minutos",
-    recoveryInfo: "Sem tempo de recuperação necessário",
-    faq: [
-      { question: "A aplicação de toxina botulínica dói?", answer: "A aplicação é feita com agulhas ultrafinas e pode causar apenas um leve desconforto. Muitos pacientes consideram o procedimento bastante tolerável." },
-      { question: "Com quanto tempo vejo o resultado?", answer: "Os resultados começam a aparecer entre 7 e 14 dias após a aplicação." },
-      { question: "Quanto tempo dura o efeito da toxina botulínica?", answer: "O efeito pode durar de 4 a 6 meses, variando de acordo com as características individuais de cada paciente." },
-      { question: "O resultado da toxina botulínica fica natural?", answer: "Quando aplicada por profissional qualificado com técnica adequada, o resultado é natural, preservando as expressões faciais." },
-      { question: "A partir de que idade posso fazer?", answer: "A indicação é individualizada e definida em consulta médica. A toxina botulínica pode ser utilizada tanto para tratamento quanto para prevenção." },
-      { question: "Toxina botulínica e Botox® são a mesma coisa?", answer: "Botox® é o nome comercial mais conhecido da toxina botulínica tipo A, fabricado pela Allergan. Existem outras marcas no mercado, como Dysport® e Xeomin®. O princípio ativo é o mesmo. Na Clínica Lacerda, a Dra. Lorena utiliza toxina botulínica de marcas aprovadas pela ANVISA, escolhendo a mais adequada para cada paciente." }
-    ],
-    relatedProcedures: ["harmonizacao-facial", "preenchimento-labial", "bioestimuladores-colageno"],
-    metaTitle: "Toxina Botulínica em Marabá - Clínica Lacerda | Dra. Lorena Lacerda",
-    metaDescription: "Toxina botulínica para suavizar rugas e linhas de expressão em Marabá/PA. Resultados naturais com Dra. Lorena Lacerda — CRM 15626. Agende sua avaliação."
   },
   "preenchimento-labial": {
     slug: "preenchimento-labial",
@@ -135,7 +93,7 @@ export const procedures: Record<string, ProcedureData> = {
       { question: "O resultado fica natural?", answer: "Sim, quando realizado por profissional qualificado, o preenchimento labial proporciona um resultado natural e harmonioso com as proporções do rosto." },
       { question: "Posso escolher o volume?", answer: "Sim, o volume é definido em conjunto com a paciente durante a avaliação, sempre respeitando a harmonia facial." }
     ],
-    relatedProcedures: ["harmonizacao-facial", "toxina-botulinica", "bioestimuladores-colageno"],
+    relatedProcedures: ["harmonizacao-facial", "bioestimuladores-colageno", "skincare-manchas"],
     metaTitle: "Preenchimento Labial em Marabá - Clínica Lacerda | Dra. Lorena Lacerda",
     metaDescription: "Preenchimento labial com ácido hialurônico em Marabá/PA. Lábios naturais e definidos. Dra. Lorena Lacerda — CRM 15626. Agende."
   },
