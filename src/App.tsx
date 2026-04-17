@@ -7,7 +7,6 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import LaserCO2 from "./pages/LaserCO2";
 import HarmonizacaoFacial from "./pages/HarmonizacaoFacial";
-import ToxinaBotulinica from "./pages/ToxinaBotulinica";
 import PreenchimentoLabial from "./pages/PreenchimentoLabial";
 import Bioestimuladores from "./pages/Bioestimuladores";
 import TratamentoCapilar from "./pages/TratamentoCapilar";
@@ -31,8 +30,6 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/harmonizacao-facial" element={<HarmonizacaoFacial />} />
-            <Route path="/toxina-botulinica" element={<ToxinaBotulinica />} />
-            <Route path="/toxina-botulinica-botox" element={<Navigate to="/toxina-botulinica" replace />} />
             <Route path="/preenchimento-labial" element={<PreenchimentoLabial />} />
             <Route path="/bioestimuladores-colageno" element={<Bioestimuladores />} />
             <Route path="/laser-co2-fracionado" element={<LaserCO2 />} />
@@ -43,9 +40,11 @@ const App = () => (
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
-            {/* Legacy routes */}
+            {/* Legacy redirects */}
+            <Route path="/toxina-botulinica" element={<Navigate to="/harmonizacao-facial" replace />} />
+            <Route path="/toxina-botulinica-botox" element={<Navigate to="/harmonizacao-facial" replace />} />
+            <Route path="/botox" element={<Navigate to="/harmonizacao-facial" replace />} />
             <Route path="/laser-co2" element={<LaserCO2 />} />
-            <Route path="/botox" element={<ToxinaBotulinica />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
