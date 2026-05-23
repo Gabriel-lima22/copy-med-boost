@@ -210,7 +210,8 @@ export const SiteHeader = () => {
               </a>
             </div>
           </nav>
-        </div>
+          </div>
+        </>
       )}
     </header>
   );
