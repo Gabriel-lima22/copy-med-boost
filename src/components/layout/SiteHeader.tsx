@@ -126,8 +126,34 @@ export const SiteHeader = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="absolute left-0 right-0 top-full max-h-[80vh] overflow-y-auto border-b border-border bg-background/98 backdrop-blur-md lg:hidden">
-          <nav className="container flex flex-col gap-1 py-6">
+        <>
+          <div
+            className="fixed inset-0 lg:hidden"
+            style={{ background: "rgba(0,0,0,0.7)", zIndex: 9997 }}
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            className="fixed right-0 top-0 overflow-y-auto lg:hidden animate-in slide-in-from-right duration-300"
+            style={{
+              backgroundColor: "#0A0A0A",
+              height: "100vh",
+              minHeight: "100dvh",
+              width: "75vw",
+              maxWidth: "320px",
+              padding: "80px 32px 40px 32px",
+              zIndex: 9998,
+            }}
+          >
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Fechar menu"
+              className="absolute right-5 top-5 text-foreground"
+              style={{ zIndex: 9999 }}
+            >
+              <X className="h-7 w-7" />
+            </button>
+          <nav className="flex flex-col gap-1">
             <Link
               to="/"
               className="rounded-md px-4 py-3 font-body text-base font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-primary"
