@@ -26,7 +26,7 @@ const PoliticaPrivacidade = () => {
             </h1>
 
             <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
-              <p>Última atualização: Abril de 2026</p>
+              <p>Última atualização: Agosto de 2026</p>
 
               <h2 className="font-heading text-2xl font-semibold text-foreground">1. Informações Gerais</h2>
               <p>
@@ -55,12 +55,31 @@ const PoliticaPrivacidade = () => {
                 Seus dados pessoais não serão compartilhados com terceiros, exceto quando necessário para cumprir obrigações legais ou com prestadores de serviços essenciais (como plataformas de marketing), sempre com garantias de proteção adequadas.
               </p>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">5. Segurança</h2>
+              <h2 className="font-heading text-2xl font-semibold text-foreground">5. Cookies e Ferramentas de Análise</h2>
+              <p>
+                Este site utiliza cookies e ferramentas de terceiros para entender como as páginas são usadas e para medir o resultado das campanhas:
+              </p>
+              <ul className="ml-6 list-disc space-y-1">
+                <li>
+                  <strong>Google Analytics 4</strong> — páginas visitadas, origem do acesso e tempo de permanência, de forma agregada.
+                </li>
+                <li>
+                  <strong>Google Ads e Google Tag Manager</strong> — medição das conversões das campanhas de anúncios.
+                </li>
+                <li>
+                  <strong>Microsoft Clarity</strong> — mapas de calor de clique e de rolagem e gravação anônima da navegação, usados para identificar dificuldades de uso. O Clarity oculta automaticamente o conteúdo digitado em campos de formulário.
+                </li>
+              </ul>
+              <p>
+                Essas ferramentas não recebem seu nome, seu telefone nem qualquer informação de saúde. Você pode bloquear ou apagar cookies nas configurações do seu navegador e pode solicitar a exclusão dos seus dados de navegação pelo contato indicado abaixo.
+              </p>
+
+              <h2 className="font-heading text-2xl font-semibold text-foreground">6. Segurança</h2>
               <p>
                 Adotamos medidas de segurança técnicas e administrativas para proteger seus dados pessoais contra acessos não autorizados, destruição, perda ou alteração.
               </p>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">6. Seus Direitos</h2>
+              <h2 className="font-heading text-2xl font-semibold text-foreground">7. Seus Direitos</h2>
               <p>Você tem direito a:</p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>Confirmar a existência de tratamento de seus dados</li>
@@ -70,7 +89,7 @@ const PoliticaPrivacidade = () => {
                 <li>Revogar o consentimento a qualquer momento</li>
               </ul>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">7. Contato</h2>
+              <h2 className="font-heading text-2xl font-semibold text-foreground">8. Contato</h2>
               <p>
                 Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato pelo WhatsApp: (94) 99152-1617.
               </p>

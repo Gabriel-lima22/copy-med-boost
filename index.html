@@ -30,6 +30,22 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!--
+      IDs de medicao do site. Este e o unico lugar que precisa ser editado.
+      Enquanto um ID estiver como SUBSTITUIR, a ferramenta nao carrega e nada e enviado.
+    -->
+    <script>
+      window.__ANALYTICS__ = {
+        ga4: 'G-SUBSTITUIR',
+        clarity: 'SUBSTITUIR',
+        ads: 'AW-17789690534',
+        adsWhatsAppLabel: 'AW-17789690534/1tfpCLyTl84bEKbF5KJC'
+      };
+      window.__ANALYTICS_ON__ = function (id) {
+        return typeof id === 'string' && id.indexOf('SUBSTITUIR') === -1;
+      };
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,24 +55,59 @@
           })(window,document,'script','dataLayer','GTM-NSJN7LJ3');
     </script>
     <!-- End Google Tag Manager -->
-    <!-- Google Ads (gtag.js) -->
+
+    <!-- Google Ads + GA4 (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17789690534"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-17789690534');
+      gtag('config', window.__ANALYTICS__.ads);
+      // GA4: este config ja envia o page view da primeira tela.
+      // As trocas de rota da SPA sao enviadas pelo AnalyticsTracker (src/components).
+      if (window.__ANALYTICS_ON__(window.__ANALYTICS__.ga4)) {
+        gtag('config', window.__ANALYTICS__.ga4);
+      }
     </script>
-    <!-- Rastrear cliques no WhatsApp como conversão -->
+
+    <!-- Microsoft Clarity: mapa de calor de clique e scroll + gravacao de sessao -->
+    <script>
+      if (window.__ANALYTICS_ON__(window.__ANALYTICS__.clarity)) {
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window,document,'clarity','script',window.__ANALYTICS__.clarity);
+      }
+    </script>
+
+    <!-- Clique no WhatsApp: conversao do Ads, lead no GA4 e marcacao no Clarity -->
     <script>
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a');
-        if (link && link.href && link.href.indexOf('wa.me') !== -1) {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17789690534/1tfpCLyTl84bEKbF5KJC',
-            'value': 1.0,
-            'currency': 'BRL'
+        if (!link || !link.href || link.href.indexOf('wa.me') === -1) return;
+
+        var A = window.__ANALYTICS__;
+
+        gtag('event', 'conversion', {
+          'send_to': A.adsWhatsAppLabel,
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+
+        if (window.__ANALYTICS_ON__(A.ga4)) {
+          gtag('event', 'generate_lead', {
+            'send_to': A.ga4,
+            'method': 'whatsapp',
+            'page_path': window.location.pathname
           });
+        }
+
+        // Marca a sessao no Clarity e pede para ela ser guardada,
+        // para dar para assistir so quem clicou no WhatsApp.
+        if (window.clarity) {
+          window.clarity('set', 'whatsapp_click', 'sim');
+          window.clarity('upgrade', 'whatsapp_click');
         }
       });
     </script>
