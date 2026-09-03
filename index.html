@@ -123,6 +123,13 @@
     <script defer src="https://analytics.egidedigital.com.br/script.js"
       data-website-id="9ee738fb-67de-4d1a-b5a2-6be4efe86dbd"
       data-domains="novo.clinicalacerda.com,clinicalacerda.com"></script>
+
+    <!-- recorder.js: coleta de heatmaps. Complementa o script.js acima, nao o substitui:
+         espera window.umami.getSession().cache, que so existe depois do primeiro pageview
+         do script.js. Nao le data-domains, mas herda o filtro: fora dos dois hosts o
+         script.js nao cria sessao e o recorder nao envia nada. -->
+    <script defer src="https://analytics.egidedigital.com.br/recorder.js"
+      data-website-id="9ee738fb-67de-4d1a-b5a2-6be4efe86dbd"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
