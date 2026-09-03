@@ -62,3 +62,53 @@ export const trackEvent = (
 
   window.gtag("event", name, { send_to: id, ...params });
 };
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * Camada de eventos do GTM (GTM-NSJN7LJ3)
+ *
+ * O GTM ja esta no index.html. O que faltava era um vocabulario de eventos que
+ * o painel do GTM pudesse usar como gatilho. `pushDataLayer` e esse vocabulario.
+ *
+ * IMPORTANTE — risco de conversao dobrada: o index.html tem um listener proprio
+ * que dispara `gtag('event','conversion')` no label
+ * AW-17789690534/1tfpCLyTl84bEKbF5KJC em QUALQUER clique num link wa.me.
+ * Se uma tag do GTM disparada por `whatsapp_click` usar esse mesmo label, a
+ * conversao conta duas vezes. Use um label novo no Ads, ou remova o listener
+ * do index.html ao criar a tag no GTM — nunca os dois com o mesmo label.
+ * ────────────────────────────────────────────────────────────────────────────*/
+
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
+/** Empurra um evento nomeado para o dataLayer do GTM. No-op se o GTM nao carregou. */
+export const pushDataLayer = (
+  event: string,
+  params: Record<string, unknown> = {}
+) => {
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event, ...params });
+};
+
+/**
+ * Clique em qualquer CTA de WhatsApp.
+ * `location` diz de qual bloco da pagina o clique veio (hero, cta_final, ...),
+ * o que permite medir no GTM/GA4 qual secao converte.
+ */
+export const trackWhatsAppClick = (location: string, procedure?: string) =>
+  pushDataLayer("whatsapp_click", {
+    click_location: location,
+    procedure,
+    page_path: typeof window !== "undefined" ? window.location.pathname : undefined,
+  });
+
+/** Envio validado do formulario de captacao de lead. */
+export const trackLeadFormSubmit = (procedure: string) =>
+  pushDataLayer("lead_form_submit", {
+    form_name: "lead_whatsapp",
+    procedure,
+    page_path: typeof window !== "undefined" ? window.location.pathname : undefined,
+  });

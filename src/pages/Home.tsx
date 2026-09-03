@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/SeoHead";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Heart, ClipboardList, Zap, Sparkles, Star, MapPin, Clock, Phone, Quote, ChevronLeft, ChevronRight } from "lucide-react";
@@ -8,19 +8,19 @@ import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { ScrollReveal } from "@/hooks/use-scroll-animation";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 import { useState, useEffect, useCallback } from "react";
-import draLorena from "@/assets/dra-lorena.jpg";
-import heroHome from "@/assets/hero-home.jpg";
-import bgTestimonials from "@/assets/bg-testimonials.jpg";
-import ctaBg from "@/assets/cta-bg.jpg";
-import procHarmonizacao from "@/assets/proc-harmonizacao.jpg";
+import draLorena from "@/assets/dra-lorena.webp";
+import heroHome from "@/assets/hero-home.webp";
+import bgTestimonials from "@/assets/bg-testimonials.webp";
+import ctaBg from "@/assets/cta-bg.webp";
+import procHarmonizacao from "@/assets/proc-harmonizacao.webp";
 
-import procLabial from "@/assets/proc-labial.jpg";
-import procBioestimuladores from "@/assets/proc-bioestimuladores.jpg";
-import procLaser from "@/assets/proc-laser.jpg";
-import procCapilar from "@/assets/proc-capilar.jpg";
-import procEpilacao from "@/assets/proc-epilacao.jpg";
-import procSkincare from "@/assets/proc-skincare.jpg";
-import procMinilipo from "@/assets/proc-minilipo.jpg";
+import procLabial from "@/assets/proc-labial.webp";
+import procBioestimuladores from "@/assets/proc-bioestimuladores.webp";
+import procLaser from "@/assets/proc-laser.webp";
+import procCapilar from "@/assets/proc-capilar.webp";
+import procSkincare from "@/assets/proc-skincare.webp";
+import procMinilipo from "@/assets/proc-minilipo.webp";
+import procEndolaser from "@/assets/hero-skin.webp";
 
 const whatsappLink = createWhatsAppLink("Olá! Vim pelo site e gostaria de agendar uma avaliação.");
 
@@ -30,9 +30,9 @@ const procedureShortcuts = [
   { slug: "bioestimuladores-colageno", title: "Bioestimuladores de Colágeno", description: "Firmeza e luminosidade de dentro pra fora", image: procBioestimuladores },
   { slug: "laser-co2-fracionado", title: "Laser CO2 Fracionado", description: "Renovação profunda da pele com tecnologia", image: procLaser },
   { slug: "tratamento-capilar", title: "Tratamento Capilar", description: "Protocolos para fios mais fortes e saudáveis", image: procCapilar },
-  { slug: "epilacao-laser", title: "Epilação a Laser", description: "Pele lisa com depilação definitiva", image: procEpilacao },
   { slug: "skincare-manchas", title: "Skincare e Manchas", description: "Cuidados especializados para uma pele radiante", image: procSkincare },
   { slug: "mini-lipo-localizada", title: "Mini Lipo Localizada", description: "Contorno corporal com microcânulas", image: procMinilipo },
+  { slug: "endolaser", title: "Endolaser", description: "Laser aplicado sob a pele para avaliação de flacidez", image: procEndolaser },
 ];
 
 const differentials = [
@@ -50,23 +50,6 @@ const testimonials = [
   { name: "Fernanda L.", text: "Profissional maravilhosa! Fez toda a diferença na minha autoestima. Consultório lindo e acolhedor.", procedure: "Bioestimuladores", stars: 5 },
 ];
 
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Clínica Lacerda",
-  description: "Clínica de Medicina Estética em Marabá/PA — Dra. Lorena Lacerda",
-  url: "https://clinicalacerda.com",
-  telephone: "+5594991521617",
-  address: { "@type": "PostalAddress", addressLocality: "Marabá", addressRegion: "PA", addressCountry: "BR" },
-  geo: { "@type": "GeoCoordinates", latitude: "-5.3686", longitude: "-49.1178" },
-  medicalSpecialty: "PlasticSurgery",
-  priceRange: "$$",
-  openingHours: "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
-  sameAs: [
-    "https://www.instagram.com/dralorenalacerdaa",
-    "https://www.doctoralia.com.br/lorena-lacerda-2/especialista-em-medicina-estetica/maraba",
-  ],
-};
 
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -86,18 +69,7 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Clínica Lacerda | Dra. Lorena Lacerda - Medicina Estética em Marabá</title>
-        <meta name="description" content="Clínica Lacerda — Medicina Estética em Marabá/PA com Dra. Lorena Lacerda (CRM 15626). Harmonização facial, preenchimento, bioestimuladores, laser CO2 e mais. Agende sua avaliação." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://clinicalacerda.com" />
-        <meta property="og:title" content="Clínica Lacerda | Medicina Estética em Marabá" />
-        <meta property="og:description" content="Medicina Estética com olhar humanizado. Dra. Lorena Lacerda — CRM 15626." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://clinicalacerda.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
-      </Helmet>
+      <SeoHead path="/" />
 
       <SiteHeader />
 
@@ -111,6 +83,8 @@ const Home = () => {
               className="h-full w-full object-cover"
               width={1920}
               height={1080}
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/75 to-background/40" />
           </div>

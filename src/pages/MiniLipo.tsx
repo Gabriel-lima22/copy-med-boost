@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/SeoHead";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,23 +18,23 @@ import { ScrollReveal } from "@/hooks/use-scroll-animation";
 import { handleWhatsAppClick } from "@/lib/whatsapp";
 
 // Images
-import heroImg from "@/assets/minilipo-hero.jpg";
-import whatImg from "@/assets/minilipo-what.jpg";
-import tableBg from "@/assets/minilipo-table-bg.jpg";
-import benefitsBg from "@/assets/minilipo-benefits-bg.jpg";
-import timelineBg from "@/assets/minilipo-timeline-bg.jpg";
-import step1Img from "@/assets/minilipo-step1.jpg";
-import step4Img from "@/assets/minilipo-step4.jpg";
-import step6Img from "@/assets/minilipo-step6.jpg";
-import whoCanDoImg from "@/assets/minilipo-whocando.jpg";
-import faqImg from "@/assets/minilipo-faq.jpg";
-import ctaImg from "@/assets/minilipo-cta.jpg";
-import areaAbdomen from "@/assets/area-abdomen.jpg";
-import areaPapada from "@/assets/area-papada.jpg";
-import areaFlancos from "@/assets/area-flancos.jpg";
-import areaCostas from "@/assets/area-costas.jpg";
-import areaBracos from "@/assets/area-bracos.jpg";
-import areaCoxas from "@/assets/area-coxas.jpg";
+import heroImg from "@/assets/minilipo-hero.webp";
+import whatImg from "@/assets/minilipo-what.webp";
+import tableBg from "@/assets/minilipo-table-bg.webp";
+import benefitsBg from "@/assets/minilipo-benefits-bg.webp";
+import timelineBg from "@/assets/minilipo-timeline-bg.webp";
+import step1Img from "@/assets/minilipo-step1.webp";
+import step4Img from "@/assets/minilipo-step4.webp";
+import step6Img from "@/assets/minilipo-step6.webp";
+import whoCanDoImg from "@/assets/minilipo-whocando.webp";
+import faqImg from "@/assets/minilipo-faq.webp";
+import ctaImg from "@/assets/minilipo-cta.webp";
+import areaAbdomen from "@/assets/area-abdomen.webp";
+import areaPapada from "@/assets/area-papada.webp";
+import areaFlancos from "@/assets/area-flancos.webp";
+import areaCostas from "@/assets/area-costas.webp";
+import areaBracos from "@/assets/area-bracos.webp";
+import areaCoxas from "@/assets/area-coxas.webp";
 
 const whatsappLink = "https://wa.me/5594992693532?text=Oi%2C%20vim%20pelo%20Google%20e%20tenho%20interesse%20em%20Mini%20Lipo%20Localizada.";
 
@@ -101,15 +102,8 @@ const faqSchema = {
 
 const MiniLipo = () => (
   <>
+    <SeoHead path="/mini-lipo-localizada" />
     <Helmet>
-      <title>Mini Lipo Localizada em Marabá - Clínica Lacerda | Dra. Lorena Lacerda</title>
-      <meta name="description" content="Mini lipoaspiração localizada com microcânulas em Marabá/PA. Recuperação rápida, resultado definitivo. Dra. Lorena Lacerda — CRM 15626." />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://clinicalacerda.com/mini-lipo-localizada" />
-      <meta property="og:title" content="Mini Lipo Localizada em Marabá - Clínica Lacerda" />
-      <meta property="og:description" content="Mini lipoaspiração com microcânulas. Recuperação rápida e resultado definitivo." />
-      <meta property="og:url" content="https://clinicalacerda.com/mini-lipo-localizada" />
-      <meta property="og:type" content="website" />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </Helmet>

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/SeoHead";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle, ArrowRight, Clock, CalendarDays } from "lucide-react";
@@ -16,18 +16,17 @@ import { MedicalDisclaimer } from "@/components/layout/MedicalDisclaimer";
 import { ScrollReveal } from "@/hooks/use-scroll-animation";
 import { createWhatsAppLink, handleWhatsAppClick, PROCEDURE_WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import { procedures } from "@/lib/procedures-data";
-import ctaBg from "@/assets/cta-bg.jpg";
+import ctaBg from "@/assets/cta-bg.webp";
 
 // Procedure hero images mapping
-import procHarmonizacao from "@/assets/proc-harmonizacao.jpg";
-import procHarmonizacao2 from "@/assets/proc-harmonizacao.jpg";
-import procLabial from "@/assets/proc-labial.jpg";
-import procBioestimuladores from "@/assets/proc-bioestimuladores.jpg";
-import procLaser from "@/assets/proc-laser.jpg";
-import procCapilar from "@/assets/proc-capilar.jpg";
-import procEpilacao from "@/assets/proc-epilacao.jpg";
-import procSkincare from "@/assets/proc-skincare.jpg";
-import procMinilipo from "@/assets/proc-minilipo.jpg";
+import procHarmonizacao from "@/assets/proc-harmonizacao.webp";
+import procHarmonizacao2 from "@/assets/proc-harmonizacao.webp";
+import procLabial from "@/assets/proc-labial.webp";
+import procBioestimuladores from "@/assets/proc-bioestimuladores.webp";
+import procLaser from "@/assets/proc-laser.webp";
+import procCapilar from "@/assets/proc-capilar.webp";
+import procSkincare from "@/assets/proc-skincare.webp";
+import procMinilipo from "@/assets/proc-minilipo.webp";
 
 const heroImages: Record<string, string> = {
   "harmonizacao-facial": procHarmonizacao,
@@ -35,7 +34,6 @@ const heroImages: Record<string, string> = {
   "bioestimuladores-colageno": procBioestimuladores,
   "laser-co2-fracionado": procLaser,
   "tratamento-capilar": procCapilar,
-  "epilacao-laser": procEpilacao,
   "skincare-manchas": procSkincare,
   "mini-lipo-localizada": procMinilipo,
 };
@@ -52,43 +50,13 @@ export const ProcedurePage = ({ procedureSlug }: ProcedurePageProps) => {
   const whatsappLink = createWhatsAppLink(whatsappMessage);
   const heroImage = heroImages[procedureSlug];
 
-  const medicalWebPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    name: data.title,
-    description: data.metaDescription,
-    lastReviewed: "2026-04-01",
-    reviewedBy: { "@type": "Physician", name: "Dra. Lorena Lacerda", credential: "CRM 15626" },
-    about: { "@type": "MedicalProcedure", name: data.shortTitle, procedureType: "NoninvasiveProcedure" },
-  };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: data.faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-  };
 
   const relatedData = data.relatedProcedures.map((slug) => procedures[slug]).filter(Boolean);
 
   return (
     <>
-      <Helmet>
-        <title>{data.metaTitle}</title>
-        <meta name="description" content={data.metaDescription} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://clinicalacerda.com/${data.slug}`} />
-        <meta property="og:title" content={data.metaTitle} />
-        <meta property="og:description" content={data.metaDescription} />
-        <meta property="og:url" content={`https://clinicalacerda.com/${data.slug}`} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(medicalWebPageSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <SeoHead path={`/${data.slug}`} />
 
       <SiteHeader />
 

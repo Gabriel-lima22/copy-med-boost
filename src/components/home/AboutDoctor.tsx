@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Award, GraduationCap, Heart } from "lucide-react";
-import doctorImage from "@/assets/dra-lorena.jpg";
+import doctorImage from "@/assets/dra-lorena.webp";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
 const whatsappLink = createWhatsAppLink("Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.");

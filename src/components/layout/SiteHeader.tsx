@@ -10,9 +10,9 @@ const procedureLinks = [
   { href: "/bioestimuladores-colageno", label: "Bioestimuladores" },
   { href: "/laser-co2-fracionado", label: "Laser CO2 Fracionado" },
   { href: "/tratamento-capilar", label: "Tratamento Capilar" },
-  { href: "/epilacao-laser", label: "Epilação a Laser" },
   { href: "/skincare-manchas", label: "Skincare e Manchas" },
   { href: "/mini-lipo-localizada", label: "Mini Lipo Localizada" },
+  { href: "/endolaser", label: "Endolaser" },
 ];
 
 export const SiteHeader = () => {

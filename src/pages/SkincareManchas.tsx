@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/SeoHead";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Droplet, Sun, Shield, Sparkles, Search, Heart, CheckCircle, ArrowRight } from "lucide-react";
@@ -15,12 +16,12 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MedicalDisclaimer } from "@/components/layout/MedicalDisclaimer";
 import { ScrollReveal } from "@/hooks/use-scroll-animation";
 import { handleWhatsAppClick } from "@/lib/whatsapp";
-import heroImg from "@/assets/proc-skincare-hero.jpg";
-import imgPeeling from "@/assets/skincare-peeling.jpg";
-import imgMicro from "@/assets/skincare-microagulhamento.jpg";
-import imgLimpeza from "@/assets/skincare-limpeza.jpg";
-import imgProdutos from "@/assets/skincare-produtos.jpg";
-import ctaBg from "@/assets/cta-bg.jpg";
+import heroImg from "@/assets/proc-skincare-hero.webp";
+import imgPeeling from "@/assets/skincare-peeling.webp";
+import imgMicro from "@/assets/skincare-microagulhamento.webp";
+import imgLimpeza from "@/assets/skincare-limpeza.webp";
+import imgProdutos from "@/assets/skincare-produtos.webp";
+import ctaBg from "@/assets/cta-bg.webp";
 
 const whatsappLink = "https://wa.me/5594992693532?text=Oi%2C%20vim%20pelo%20Google%20e%20tenho%20interesse%20em%20Tratamento%20de%20Manchas%20e%20Skincare.";
 
@@ -124,15 +125,8 @@ const faqSchema = {
 
 const SkincareManchas = () => (
   <>
+    <SeoHead path="/skincare-manchas" />
     <Helmet>
-      <title>Tratamento de Manchas e Skincare em Marabá - Clínica Lacerda | Dra. Lorena Lacerda</title>
-      <meta name="description" content="Tratamento personalizado para melasma, acne, manchas solares e rejuvenescimento da pele em Marabá/PA. Dra. Lorena Lacerda — CRM 15626." />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://clinicalacerda.com/skincare-manchas" />
-      <meta property="og:title" content="Tratamento de Manchas e Skincare em Marabá - Clínica Lacerda" />
-      <meta property="og:description" content="Protocolos personalizados para melasma, acne e rejuvenescimento. Dra. Lorena Lacerda — CRM 15626." />
-      <meta property="og:url" content="https://clinicalacerda.com/skincare-manchas" />
-      <meta property="og:type" content="website" />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </Helmet>

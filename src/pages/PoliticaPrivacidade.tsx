@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/SeoHead";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -6,12 +6,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 const PoliticaPrivacidade = () => {
   return (
     <>
-      <Helmet>
-        <title>Política de Privacidade - Clínica Lacerda</title>
-        <meta name="description" content="Política de Privacidade da Clínica Lacerda — saiba como tratamos seus dados pessoais." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://clinicalacerda.com/politica-privacidade" />
-      </Helmet>
+      <SeoHead path="/politica-privacidade" />
 
       <SiteHeader />
       <main className="pt-20">

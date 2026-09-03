@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/SeoHead";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
@@ -7,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, GraduationCap, Hospital, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
-import draLorena from "@/assets/dra-lorena.jpg";
+import draLorena from "@/assets/dra-lorena.webp";
 
 const whatsappLink = createWhatsAppLink("Oi, vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.");
 
@@ -29,15 +30,8 @@ const physicianSchema = {
 const Sobre = () => {
   return (
     <>
+      <SeoHead path="/sobre" />
       <Helmet>
-        <title>Sobre a Dra. Lorena Lacerda - Clínica Lacerda | Medicina Estética em Marabá</title>
-        <meta name="description" content="Conheça a Dra. Lorena Lacerda, médica especialista em Medicina Estética em Marabá/PA. CRM 15626. Formada pela UNIRG." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://clinicalacerda.com/sobre" />
-        <meta property="og:title" content="Dra. Lorena Lacerda - Medicina Estética em Marabá" />
-        <meta property="og:description" content="Médica especialista em Medicina Estética. CRM 15626." />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(physicianSchema)}</script>
       </Helmet>
 

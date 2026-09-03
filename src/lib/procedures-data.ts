@@ -217,45 +217,6 @@ export const procedures: Record<string, ProcedureData> = {
     metaTitle: "Tratamento Capilar em Marabá - Clínica Lacerda | Dra. Lorena Lacerda",
     metaDescription: "Tratamento capilar em Marabá/PA. Combata a queda de cabelo com MMP e protocolos personalizados. Dra. Lorena Lacerda — CRM 15626."
   },
-  "epilacao-laser": {
-    slug: "epilacao-laser",
-    title: "Epilação a Laser em Marabá",
-    shortTitle: "Epilação a Laser",
-    subtitle: "Depilação definitiva com tecnologia avançada",
-    shortDescription: "Depilação definitiva com tecnologia",
-    description: [
-      "A epilação a laser é o método mais eficaz para remoção definitiva de pelos indesejados. Utilizando laser de diodo de última geração, o procedimento é seguro, rápido e pode ser aplicado em todas as áreas do corpo.",
-      "O laser atua diretamente no folículo piloso, reduzindo progressivamente o crescimento dos pelos a cada sessão, proporcionando uma pele lisa e livre de pelos.",
-      "Na Clínica Lacerda, o procedimento é realizado com equipamento de alta tecnologia, garantindo eficácia para diferentes tipos de pele e espessuras de pelo."
-    ],
-    indications: [
-      "Pelos indesejados em qualquer área do corpo",
-      "Foliculite (inflamação do pelo encravado)",
-      "Sensibilidade a métodos tradicionais de depilação",
-      "Busca por praticidade e conforto"
-    ],
-    benefits: [
-      { title: "Definitivo", description: "Redução progressiva e duradoura dos pelos a cada sessão" },
-      { title: "Todas as Áreas", description: "Pode ser aplicado em rosto, corpo e áreas íntimas" },
-      { title: "Rápido", description: "Sessões de poucos minutos a 1 hora dependendo da área" },
-      { title: "Confortável", description: "Tecnologia com sistema de resfriamento para conforto durante a aplicação" }
-    ],
-    steps: [
-      { title: "Avaliação", description: "Análise do tipo de pele, pelo e definição do protocolo" },
-      { title: "Preparação", description: "Orientações pré-procedimento (tricotomia da área)" },
-      { title: "Aplicação", description: "Sessão de laser com sistema de resfriamento para conforto" },
-      { title: "Manutenção", description: "Sessões periódicas conforme protocolo (geralmente 6-10 sessões)" }
-    ],
-    faq: [
-      { question: "Quantas sessões são necessárias?", answer: "Geralmente são necessárias de 6 a 10 sessões, com intervalos de 4 a 6 semanas entre elas. O número pode variar conforme a área tratada e as características individuais." },
-      { question: "A epilação a laser dói?", answer: "O equipamento possui sistema de resfriamento que minimiza o desconforto. A sensação pode variar conforme a área tratada e a sensibilidade individual." },
-      { question: "Funciona em todos os tipos de pele?", answer: "O laser de diodo é seguro e eficaz para diferentes fototipos de pele. A avaliação prévia é importante para definir os parâmetros ideais." },
-      { question: "Os resultados são permanentes?", answer: "A epilação a laser promove uma redução significativa e duradoura dos pelos. Pode haver necessidade de sessões de manutenção esporádicas." }
-    ],
-    relatedProcedures: ["skincare-manchas", "harmonizacao-facial", "laser-co2-fracionado"],
-    metaTitle: "Epilação a Laser em Marabá - Clínica Lacerda | Dra. Lorena Lacerda",
-    metaDescription: "Epilação a laser em Marabá/PA. Depilação definitiva para todas as áreas. Dra. Lorena Lacerda — CRM 15626. Agende sua avaliação."
-  },
   "skincare-manchas": {
     slug: "skincare-manchas",
     title: "Skincare e Tratamento de Manchas em Marabá",
