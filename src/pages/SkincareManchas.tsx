@@ -15,7 +15,7 @@ import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MedicalDisclaimer } from "@/components/layout/MedicalDisclaimer";
 import { ScrollReveal } from "@/hooks/use-scroll-animation";
-import { handleWhatsAppClick } from "@/lib/whatsapp";
+import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 import heroImg from "@/assets/proc-skincare-hero.webp";
 import imgPeeling from "@/assets/skincare-peeling.webp";
 import imgMicro from "@/assets/skincare-microagulhamento.webp";
@@ -23,7 +23,7 @@ import imgLimpeza from "@/assets/skincare-limpeza.webp";
 import imgProdutos from "@/assets/skincare-produtos.webp";
 import ctaBg from "@/assets/cta-bg.webp";
 
-const whatsappLink = "https://wa.me/5594992693532?text=Oi%2C%20vim%20pelo%20Google%20e%20tenho%20interesse%20em%20Tratamento%20de%20Manchas%20e%20Skincare.";
+const whatsappLink = createWhatsAppLink("Oi, vim pelo Google e tenho interesse em Tratamento de Manchas e Skincare.");
 
 const conditions = [
   { icon: Droplet, title: "Melasma", desc: "Manchas escuras no rosto causadas por hormônios e sol" },

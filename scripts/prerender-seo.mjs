@@ -13,7 +13,8 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const dist = join(root, "dist");
+// OUT_DIR permite gerar um build de teste (ex.: dist-staging) sem tocar no dist/ de producao.
+const dist = join(root, process.env.OUT_DIR || "dist");
 const tmp = join(dist, ".seo-routes.mjs");
 
 // seo-routes.ts e TypeScript e usa o alias "@/": compila num modulo temporario.

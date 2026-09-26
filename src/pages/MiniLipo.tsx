@@ -15,7 +15,7 @@ import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MedicalDisclaimer } from "@/components/layout/MedicalDisclaimer";
 import { ScrollReveal } from "@/hooks/use-scroll-animation";
-import { handleWhatsAppClick } from "@/lib/whatsapp";
+import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
 
 // Images
 import heroImg from "@/assets/minilipo-hero.webp";
@@ -36,7 +36,7 @@ import areaCostas from "@/assets/area-costas.webp";
 import areaBracos from "@/assets/area-bracos.webp";
 import areaCoxas from "@/assets/area-coxas.webp";
 
-const whatsappLink = "https://wa.me/5594992693532?text=Oi%2C%20vim%20pelo%20Google%20e%20tenho%20interesse%20em%20Mini%20Lipo%20Localizada.";
+const whatsappLink = createWhatsAppLink("Oi, vim pelo Google e tenho interesse em Mini Lipo Localizada.");
 
 const areas = [
   { title: "Abdômen", desc: "Gordura abdominal resistente", image: areaAbdomen },

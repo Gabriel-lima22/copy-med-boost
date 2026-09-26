@@ -1,3 +1,5 @@
+import { getAdsAttribution } from "@/lib/adsAttribution";
+
 /**
  * Camada de analytics do site.
  *
@@ -98,12 +100,18 @@ export const pushDataLayer = (
  * `location` diz de qual bloco da pagina o clique veio (hero, cta_final, ...),
  * o que permite medir no GTM/GA4 qual secao converte.
  */
-export const trackWhatsAppClick = (location: string, procedure?: string) =>
+export const trackWhatsAppClick = (location: string, procedure?: string) => {
+  const ads = getAdsAttribution();
   pushDataLayer("whatsapp_click", {
     click_location: location,
     procedure,
     page_path: typeof window !== "undefined" ? window.location.pathname : undefined,
+    // Origem do Google Ads (vazio em visita organica) — ver adsAttribution.ts
+    ads_campaign: ads?.campaign || undefined,
+    ads_keyword: ads?.keyword || undefined,
+    gclid: ads?.gclid || undefined,
   });
+};
 
 /** Envio validado do formulario de captacao de lead. */
 export const trackLeadFormSubmit = (procedure: string) =>

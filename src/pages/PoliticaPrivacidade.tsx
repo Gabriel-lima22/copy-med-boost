@@ -62,6 +62,9 @@ const PoliticaPrivacidade = () => {
                   <strong>Google Ads e Google Tag Manager</strong> — medição das conversões das campanhas de anúncios.
                 </li>
                 <li>
+                  <strong>Cookie <code>cl_ads</code></strong> — quando você chega ao site por um anúncio do Google, guardamos por até 30 dias, no seu próprio navegador, a identificação da campanha, do grupo de anúncios e da palavra-chave do anúncio e o identificador de clique do Google (gclid). Com isso, a mensagem que você envia pelo WhatsApp leva ao final um código curto, como <code>[G-123456789-laser-co2]</code>, que nos diz qual anúncio trouxe o contato. Esse cookie não guarda seu nome, seu telefone nem informação de saúde.
+                </li>
+                <li>
                   <strong>Microsoft Clarity</strong> — mapas de calor de clique e de rolagem e gravação anônima da navegação, usados para identificar dificuldades de uso. O Clarity oculta automaticamente o conteúdo digitado em campos de formulário.
                 </li>
               </ul>
