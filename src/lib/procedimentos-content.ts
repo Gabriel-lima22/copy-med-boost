@@ -47,7 +47,7 @@ export interface Procedimento {
 export const PROCEDIMENTOS: Record<string, Procedimento> = {
   "laser-co2-fracionado": {
     name: "Laser CO2 Fracionado", kicker: "Laser CO2 Fracionado", title: "Pele renovada,", titleEm: "com indicação médica",
-    subtitle: "Manchas, cicatrizes de acne, poros e flacidez tratados em uma única tecnologia, com estímulo profundo de colágeno. A indicação é confirmada em avaliação com a Dra. Lorena.",
+    subtitle: "Manchas, cicatrizes de acne, poros e flacidez, com estímulo de colágeno. A indicação é confirmada na avaliação.",
     equipLine: "Laser CO2 fracionado Hegon · registro ANVISA 81243810014",
     img: imgLaserCo2Rosto, imgPos: "50% 62%", heroH: 480,
     forWhom: [
@@ -73,8 +73,8 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
 
   "endolaser": {
     name: "Endolaser", kicker: "Endolaser", title: "Firmeza por dentro, sem cirurgia.",
-    subtitle: "Papada, flacidez do rosto e do corpo, gordura localizada. Sessão única na maioria dos casos, com avaliação médica individual, em Marabá.",
-    paragraph: "Uma fibra óptica bem fina entra por um ponto mínimo na pele e entrega calor controlado exatamente onde precisa: na camada que sustenta a pele. Esse calor estimula a retração da pele e a produção de colágeno novo nas semanas seguintes. No corpo, o mesmo laser também atua sobre a gordura localizada (lipólise).",
+    subtitle: "Papada, flacidez do rosto e do corpo e gordura localizada. Na maioria dos casos, uma sessão.",
+    paragraph: "Uma fibra óptica fina entra por um ponto mínimo na pele e aquece a camada que a sustenta, estimulando retração e colágeno novo. No corpo, também trata gordura localizada.",
     equipLine: "LiftEndo · Medical San · registro ANVISA 82338020003 · laser de diodo 980 nm + 1470 nm",
     equip: { title: "LiftEndo · Medical San", items: ["Endolaser de alta potência fabricado no Brasil, registro ANVISA 82338020003", "Dois comprimentos de onda: 1470 nm para retração e colágeno, 980 nm para lipólise", "Modos contínuo, pulsado ou pontual, com potência ajustada área por área", "Fibra óptica bem fina, entrada por ponto de menos de 1 mm"], img: imgLiftendo },
     img: imgProcEndolaser, imgPos: "100% 30%", heroH: 400,
@@ -86,7 +86,7 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
       { t: "Parte interna das coxas e joelhos", area: "Corpo" },
     ],
     forWhomNote: "A indicação e a área são definidas na avaliação. Flacidez muito acentuada ou grande excesso de pele é indicação de cirurgia — e a Dra. vai dizer isso.",
-    diff: { title: "Dois comprimentos de onda, um objetivo por vez", text: "O 1470 nm é absorvido pela água da pele — é ele que faz a retração e estimula o colágeno. O 980 nm interage com a gordura — é ele que faz a lipólise. A Dra. escolhe qual usar, em qual modo (contínuo, pulsado ou pontual) e com qual potência, área por área. Diferente de lasers e ultrassons de superfície, a energia é entregue por dentro, onde a flacidez começa." },
+    diff: { title: "Dois comprimentos de onda", text: "O 1470 nm é absorvido pela água da pele — é ele que faz a retração e estimula o colágeno. O 980 nm interage com a gordura — é ele que faz a lipólise. A Dra. escolhe qual usar, em qual modo (contínuo, pulsado ou pontual) e com qual potência, área por área. Diferente de lasers e ultrassons de superfície, a energia é entregue por dentro, onde a flacidez começa." },
     steps: [
       { t: "Registro e marcação", d: "Fotos para o prontuário, marcação da área em pé e limpeza." },
       { t: "Anestesia local", d: "Aplicada nos pontos de entrada e na área tratada." },
@@ -97,9 +97,9 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
     who: { title: "Médica na sala, do começo ao fim.", text: "Quem avalia é quem aplica. A Dra. Lorena Lacerda conduz o procedimento pessoalmente, com o LiftEndo — endolaser fabricado no Brasil, registrado na ANVISA.", crm: "CRM-PA 15626" },
     faq: [
       { q: "Dói?", a: "Com a anestesia local, a maioria descreve como um leve calor. Se surgir algum desconforto nos dias seguintes, a Dra. receita analgésico." },
-      { q: "É cirurgia? Fica cicatriz?", a: "Não é cirurgia: sem cortes, sem pontos, sem internação. O ponto de entrada da fibra tem menos de 1 mm e costuma cicatrizar em poucos dias." },
+      { q: "É cirurgia? Fica cicatriz?", a: "Não é cirurgia: sem cortes, sem pontos, sem internação. O ponto de entrada da fibra tem menos de 1 mm e fecha em poucos dias." },
       { q: "Quanto tempo dura?", a: "O colágeno novo é seu. A pele continua envelhecendo no ritmo dela, e uma manutenção pode ser indicada a cada 12 meses." },
-      { q: "Posso combinar com a mini lipo ou com o CO2?", a: "Pode, e muitas vezes faz parte do plano: a mini lipo tira o volume e o CO2 cuida da pele. A Dra. define a ordem e o intervalo." },
+      { q: "Posso combinar com a mini lipo ou com o CO2?", a: "Pode, e muitas vezes é o plano: a mini lipo tira o volume e o CO2 cuida da pele. A Dra. define a ordem e o intervalo." },
       { q: "Posso fazer no calor de Marabá?", a: "Pode. O cuidado é proteger a área do sol enquanto houver inchaço ou roxo." },
       { q: "Quem não pode fazer?", a: "Gestantes e lactantes, quem tem infecção ativa na área, distúrbios de coagulação ou uso de anticoagulante sem liberação médica, diabetes descompensado. A avaliação médica confirma se o procedimento é indicado para você." },
     ],
@@ -109,8 +109,8 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
 
   "blefaroplastia": {
     name: "Blefaroplastia", kicker: "Blefaroplastia", title: "Olhar descansado.",
-    subtitle: "Pálpebra superior tratada com laser CO2, sem corte ou com corte, conforme o grau de flacidez. A técnica é definida na avaliação com a Dra. Lorena.",
-    paragraph: "Para flacidez leve a moderada, o laser CO2 fracionado atinge a pele da pálpebra em pontos microscópicos: o calor faz a pele retrair e, nas semanas seguintes, o organismo a refaz com colágeno novo. Quando há excesso de pele, o mesmo laser é usado como bisturi na blefaroplastia com corte, removendo o que sobra. A Dra. indica o caminho certo para o seu caso.",
+    subtitle: "Pálpebra superior tratada com laser CO2, com ou sem corte, conforme o grau de flacidez.",
+    paragraph: "Na flacidez leve a moderada, o laser atua em pontos microscópicos e estimula colágeno novo, sem corte. Quando há excesso de pele, o mesmo laser faz o corte e remove o que sobra. A técnica é definida na avaliação.",
     equipLine: "Laser CO2 fracionado Hegon · registro ANVISA 81243810014",
     equip: { title: "Laser CO2 Fracionado Hegon", items: ["Laser de CO2 fracionado com registro ANVISA 81243810014", "Profundidade e intensidade ajustadas para a pele fina da pálpebra", "Pontos microscópicos com pele intacta entre eles, o que acelera a recuperação", "Fabricado no Brasil para peles brasileiras, operado pela própria Dra. Lorena"], img: imgHegonCo2 },
     img: imgProcBlefaro, imgPos: "55% 72%", heroH: 480,
@@ -121,29 +121,29 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
       { t: "Textura e poros da região", area: "Olhos" },
     ],
     forWhomNote: "Flacidez leve a moderada: laser CO2 sem corte. Excesso de pele que pesa ou cobre os cílios: blefaroplastia com corte a laser. Pálpebra inferior não é tratada no momento. A técnica é definida na avaliação.",
-    diff: { title: "Um laser, duas técnicas", text: "No modo fracionado, o laser CO2 faz a pele que existe encolher e se refazer, preservando pele intacta entre os pontos, o que acelera a recuperação. O resultado é sutil e progressivo, com manutenção periódica. No modo cirúrgico, o mesmo laser corta e remove o excesso de pele de uma vez, com menos sangramento que o bisturi, resultado duradouro e cicatriz posicionada na dobra natural da pálpebra. A Dra. escolhe a técnica pelo grau de flacidez, não pela preferência." },
+    diff: { title: "Um laser, duas técnicas", text: "No modo fracionado, o laser CO2 faz a pele que existe encolher e se refazer, preservando pele intacta entre os pontos, o que acelera a recuperação. O resultado é sutil e progressivo, com manutenção periódica. No modo cirúrgico, o mesmo laser corta e remove o excesso de pele de uma vez, com menos sangramento que o bisturi, resultado duradouro e cicatriz na dobra da pálpebra. A Dra. escolhe a técnica pelo grau de flacidez, não pela preferência." },
     steps: [
       { t: "Registro e proteção", d: "Fotos para o prontuário, limpeza e proteção dos olhos (protetor ocular)." },
       { t: "Anestésico", d: "Tópico no sem corte, com ação em cerca de 30 minutos enquanto você espera na sala. Local no com corte." },
       { t: "Aplicação", d: "Sem corte: calor e pequenas picadas na pálpebra superior. Com corte: remoção do excesso de pele com o laser e pontos finos." },
       { t: "Orientações e volta pra casa", d: "Cuidados por escrito e o WhatsApp da clínica para qualquer dúvida." },
     ],
-    after: ["Sem corte: inchaço e vermelhidão nas pálpebras, com recuperação em 5 a 7 dias. Protetor solar e óculos escuros conforme orientação da Dra.", "Com corte: roxo e sensação de inchaço no local por até 10 dias, com melhora a partir de 5 a 7 dias. Em geral é uma sessão; o resultado é duradouro, mas o envelhecimento natural da pele continua."],
+    after: ["Sem corte: inchaço e vermelhidão nas pálpebras, com recuperação em 5 a 7 dias. Protetor solar e óculos escuros conforme orientação da Dra.", "Com corte: roxo e sensação de inchaço no local por até 10 dias, com melhora a partir de 5 a 7 dias. Em geral, sessão única e resultado duradouro."],
     who: { title: "Médica na sala, do começo ao fim.", text: "Quem avalia é quem realiza. A Dra. Lorena Lacerda conduz o procedimento pessoalmente, com o laser CO2 Hegon, no modo sem corte ou cirúrgico.", crm: "CRM-PA 15626" },
     faq: [
       { q: "Dói?", a: "Sem corte, com o anestésico tópico, a maioria descreve como calor e picadas leves. Com corte, a anestesia local reduz o desconforto durante o procedimento." },
-      { q: "Sem corte ou com corte?", a: "Depende do grau de flacidez. Sem corte é para flacidez leve a moderada. Excesso de pele importante costuma ter indicação da técnica com corte — e a Dra. é honesta sobre isso na avaliação." },
+      { q: "Sem corte ou com corte?", a: "Depende do grau de flacidez. Sem corte é para flacidez leve a moderada. Excesso de pele importante costuma pedir corte — e a Dra. é honesta sobre isso na avaliação." },
       { q: "Quanto tempo dura o procedimento?", a: "Com corte, cerca de duas horas. Sem corte, cerca de uma hora e meia." },
       { q: "Quem não pode fazer?", a: "Gestantes e lactantes e quem tem herpes ativo na região. Peles mais escuras precisam de ajuste de parâmetro para evitar manchas — a Dra. avalia." },
     ],
-    cta: { title: "Qual técnica é indicada para o seu olhar?", text: "Mande uma foto dos olhos, de frente e sem maquiagem, pelo WhatsApp. A equipe agenda sua avaliação com a Dra. Lorena.", button: "Agendar avaliação" },
+    cta: { title: "Com corte ou sem corte?", text: "Mande uma foto dos olhos, de frente e sem maquiagem, pelo WhatsApp. A equipe agenda sua avaliação com a Dra. Lorena.", button: "Agendar avaliação" },
     related: ["laser-co2-fracionado", "harmonizacao-facial", "endolaser"],
   },
 
   "modelacao-glutea": {
-    name: "Remodelação Glútea", kicker: "Remodelação glútea", title: "Contorno, projeção e proporção — sem cirurgia.",
-    subtitle: "Ácido hialurônico corporal aplicado com cânula em consultório. Procedimento reversível e ajustável, com avaliação médica individual, em Marabá.",
-    paragraph: "O ácido hialurônico corporal é um gel mais denso que o usado no rosto, feito para dar sustentação e volume. Aplicado no plano profundo, abaixo da pele e acima do músculo, ele corrige depressões laterais, melhora a projeção e devolve contorno sem prótese, sem internação e sem afastamento de semanas.",
+    name: "Remodelação Glútea", kicker: "Remodelação glútea", title: "Contorno e projeção,", titleEm: "sem cirurgia.",
+    subtitle: "Ácido hialurônico corporal aplicado com cânula em consultório. Reversível e ajustável, em Marabá.",
+    paragraph: "Um gel mais denso que o usado no rosto, aplicado abaixo da pele e acima do músculo para trabalhar depressões laterais, projeção e contorno — sem prótese e sem internação.",
     equipLine: "Ácido hialurônico corporal · aplicação exclusivamente médica",
     img: imgProcGluteo, imgPos: "50% 30%", heroH: 360,
     forWhom: [
@@ -171,14 +171,14 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
       { q: "Quanto tempo dura?", a: "Em média 12 meses, variando com metabolismo, atividade física e cuidados." },
       { q: "Quem não pode fazer?", a: "Gestantes e lactantes, infecção ativa na área, doenças autoimunes em atividade, distúrbios de coagulação. A avaliação médica confirma se o procedimento é indicado para você." },
     ],
-    cta: { title: "Quer saber o que dá para fazer no seu caso?", text: "Mande uma foto de perfil e de costas pelo WhatsApp. A equipe agenda sua avaliação com a Dra. Lorena.", button: "Agendar avaliação" },
+    cta: { title: "O que dá para fazer no seu caso?", text: "Mande uma foto de perfil e de costas pelo WhatsApp. A equipe agenda sua avaliação com a Dra. Lorena.", button: "Agendar avaliação" },
     related: ["mini-lipo-localizada", "endolaser", "laser-co2-fracionado"],
   },
 
   "harmonizacao-facial": {
     name: "Harmonização Facial", kicker: "Harmonização facial", title: "Seu rosto, com as proporções certas.",
-    subtitle: "Suavização de linhas de expressão, preenchimento com ácido hialurônico e bioestimulador de colágeno. Planejamento médico individual, em Marabá.",
-    paragraph: "Harmonizar não é mudar o rosto — é equilibrar o que já existe. A Dra. avalia estrutura óssea, volume, pele e expressão, e monta um plano com o que faz sentido para você: relaxar o que marca demais, repor o que o tempo levou, estimular o que a pele precisa. Às vezes é um produto só. Às vezes é nenhum ainda.",
+    subtitle: "Suavização de linhas de expressão, ácido hialurônico e bioestimulador de colágeno, com planejamento médico individual.",
+    paragraph: "Harmonizar não é mudar o rosto — é equilibrar o que já existe. A Dra. avalia estrutura, volume, pele e expressão e monta o plano com o que faz sentido para você. Às vezes, é um produto só.",
     equipLine: "Produtos com registro na ANVISA · aplicação exclusivamente médica",
     img: imgProcHarmonizacao, imgPos: "60% 30%", heroH: 380,
     forWhom: [
@@ -190,7 +190,7 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
       { t: "Flacidez inicial e perda de firmeza do rosto e pescoço", area: "Bioestimulador" },
     ],
     forWhomNote: "A indicação e a combinação são definidas na avaliação. Se o seu caso pede outro procedimento — ou pede esperar — a Dra. vai dizer isso.",
-    diff: { title: "Três ferramentas, um plano", text: "A suavização de linhas de expressão relaxa os músculos que marcam a pele — age em dias e dura meses. O ácido hialurônico repõe volume e contorno — o efeito aparece logo após a aplicação, e o produto é reabsorvível e reversível. O bioestimulador não preenche: faz a sua própria pele produzir colágeno ao longo de meses. A Dra. combina e sequencia os três conforme o objetivo, sempre com produtos registrados na ANVISA e técnica de cânula onde a anatomia pede." },
+    diff: { title: "Três ferramentas, um plano", text: "A suavização de linhas de expressão relaxa os músculos que marcam a pele — age em dias e dura meses. O ácido hialurônico repõe volume e contorno — efeito logo após a aplicação, reabsorvível e reversível. O bioestimulador não preenche: faz a sua própria pele produzir colágeno ao longo de meses. A Dra. combina e sequencia os três conforme o objetivo, sempre com produtos registrados na ANVISA e técnica de cânula onde a anatomia pede." },
     steps: [
       { t: "Registro e marcação", d: "Fotos para o prontuário, análise das proporções e marcação dos pontos com você sentada." },
       { t: "Anestésico", d: "Tópico para as aplicações com agulha; local nos pontos de entrada da cânula. Cerca de 30 minutos." },
@@ -202,7 +202,7 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
     faq: [
       { q: "Vai ficar artificial?", a: "O objetivo é proporção, não excesso. A Dra. prefere fazer menos e complementar depois. Reversível é justamente por isso." },
       { q: "Dói?", a: "Com anestésico, a maioria descreve como picadas leves e pressão. Preenchimento com cânula desconforta menos que com agulha." },
-      { q: "Quando vejo o resultado?", a: "Preenchimento: logo após a aplicação, com ajuste final em cerca de 2 semanas. Linhas de expressão: em até 15 dias. Bioestimulador: de forma progressiva, ao longo de semanas e meses." },
+      { q: "Quando vejo o resultado?", a: "Preenchimento: logo após a aplicação. Linhas de expressão: em até 15 dias. Bioestimulador: aos poucos, ao longo de meses." },
       { q: "Quanto tempo dura?", a: "Depende do produto e do seu metabolismo. A média está na seção \"Depois\", e a Dra. ajusta a manutenção ao seu caso." },
       { q: "Posso fazer tudo no mesmo dia?", a: "Alguns produtos sim; outros pedem intervalo. A sequência faz parte do plano." },
       { q: "Quem não pode fazer?", a: "Gestantes e lactantes, infecção ativa na área, doenças autoimunes em atividade, uso de anticoagulante sem liberação. A avaliação médica confirma se o procedimento é indicado para você." },
@@ -212,9 +212,9 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
   },
 
   "mini-lipo-localizada": {
-    name: "Mini Lipo Localizada", kicker: "Mini lipo localizada", title: "Contorno para a gordura", titleEm: "que resiste à dieta e ao treino",
-    subtitle: "Papada, parte interna dos braços, culote, parte interna das coxas e joelhos. Anestesia local, cânula fina, sem internação. Avaliação médica individual, em Marabá.",
-    paragraph: "A mini lipo trata gordura localizada — a que resiste a dieta e treino — em áreas pequenas e bem delimitadas. Com anestesia local, uma cânula fina retira a gordura por um ponto mínimo na pele. Você entra andando, sai andando e volta à rotina em poucos dias. Não é lipoaspiração de grande volume, não é emagrecimento e não é tratamento de flacidez — é contorno.",
+    name: "Mini Lipo Localizada", kicker: "Mini lipo localizada", title: "Menos volume,", titleEm: "mais contorno.",
+    subtitle: "Papada, braços, culote, parte interna das coxas e joelhos. Anestesia local, cânula fina e sem internação.",
+    paragraph: "Para a gordura que resiste a dieta e treino, em áreas pequenas e bem delimitadas. Uma cânula fina retira a gordura por um ponto mínimo, e você volta à rotina em poucos dias. Não é emagrecimento: é contorno.",
     equipLine: "Procedimento médico em consultório · anestesia local",
     img: imgProcMinilipo, imgPos: "50% 45%", heroH: 380,
     forWhom: [
@@ -232,11 +232,11 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
       { t: "Aspiração", d: "Cânula fina por um ou dois pontos de entrada. Você sente pressão e movimento, não dor. Cerca de 10 minutos por área." },
       { t: "Compressão e volta pra casa", d: "Curativo, cinta ou faixa, cuidados por escrito e o WhatsApp da clínica. Você sai andando." },
     ],
-    after: ["Inchaço e roxos por 1 a 2 semanas; dor parecida com a de um treino pesado nos primeiros dias, controlada com analgésico comum. Cinta ou faixa por 10 semanas — é ela que ajuda a pele a se acomodar. Drenagem linfática a partir de 24 horas. Volta ao trabalho em 2 a 3 dias; exercício intenso após uma semana.", "As células de gordura retiradas não se regeneram, mas o resultado depende de manter o peso e a rotina. O contorno inicial aparece com a saída do inchaço, e o resultado final se define em 3 a 6 meses. Sessão única na maioria dos casos."],
+    after: ["Inchaço e roxos por 1 a 2 semanas; dor parecida com a de um treino pesado nos primeiros dias, controlada com analgésico comum. Cinta ou faixa por 10 semanas — é ela que ajuda a pele a se acomodar. Drenagem linfática a partir de 24 horas. Volta ao trabalho em 2 a 3 dias; exercício intenso após uma semana.", "As células retiradas não se regeneram; o resultado depende de manter o peso. O contorno inicial aparece com a saída do inchaço, e o resultado final se define em 3 a 6 meses. Sessão única na maioria dos casos."],
     who: { title: "Médica na sala, do começo ao fim.", text: "Quem avalia é quem aplica. A Dra. Lorena Lacerda conduz a marcação, a anestesia e a aspiração pessoalmente, em ambiente preparado para o procedimento.", crm: "CRM-PA 15626" },
     faq: [
       { q: "Dói?", a: "A anestesia local é feita justamente para reduzir o desconforto. Durante a aspiração você sente pressão e movimento, não dor. Depois, uma sensação parecida com dor de treino por alguns dias." },
-      { q: "A gordura volta?", a: "As células retiradas não se regeneram. Se houver ganho de peso, as que ficaram podem crescer — por isso o resultado depende da rotina." },
+      { q: "A gordura volta?", a: "As retiradas não se regeneram. Mas, se você engordar, as que ficaram crescem — por isso o resultado depende da rotina." },
       { q: "Fica cicatriz?", a: "Os pontos de entrada têm poucos milímetros e ficam em dobras. Com protetor solar, clareiam com o tempo." },
       { q: "Por que não abdômen e flancos?", a: "Porque essas áreas costumam pedir volume e cuidado que fogem do que a mini lipo se propõe. Preferimos fazer bem o que é pequeno." },
       { q: "Posso fazer no calor de Marabá?", a: "Pode. O cuidado é a cinta e o sol longe da área enquanto houver roxo." },
@@ -248,8 +248,8 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
 
   "tratamento-capilar": {
     name: "Tratamento Capilar", kicker: "Tratamento capilar", title: "Queda de cabelo tem causa. E tratamento.",
-    subtitle: "Consulta com tricoscopia, exames e diagnóstico antes de qualquer sessão. Depois, LED de baixa potência e medicamentos no couro cabeludo, em Marabá.",
-    paragraph: "Cabelo cai por muitos motivos — genética, hormônios, ferro baixo, tireoide, estresse, pós-parto, tração. Tratar sem saber qual é o seu dificilmente traz resultado consistente. Por isso aqui a primeira sessão é uma consulta: a Dra. examina o couro cabeludo com tricoscopia, faz a anamnese e pede exames. Só com o diagnóstico na mão o tratamento começa.",
+    subtitle: "Tricoscopia, exames e diagnóstico antes de qualquer sessão. Depois, LED e medicamentos no couro cabeludo.",
+    paragraph: "Cabelo cai por muitos motivos — genética, hormônios, tireoide, ferro baixo, estresse, pós-parto. Por isso a primeira sessão é uma consulta, com tricoscopia e exames. O tratamento começa com o diagnóstico.",
     equipLine: "Capellux i9 Profissional · 204 LEDs de 635 nm · registro ANVISA 80455460006",
     equip: { title: "Capellux i9 Profissional", items: ["Capacete de LED de baixa potência com 204 LEDs de 635 nm", "Estimula o folículo sem calor nem dor: 15 minutos por sessão", "Registro ANVISA 80455460006", "Usado em conjunto com a aplicação de medicamentos no couro cabeludo"], img: imgCapelluxI9 },
     img: imgProcCapilarCard, imgPos: "20% 60%", heroH: 360,
@@ -264,14 +264,14 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
     diff: { title: "Diagnóstico primeiro, sessão depois", text: "A tricoscopia amplia o couro cabeludo e mostra o que o olho não vê: miniaturização dos fios, inflamação, padrão da perda. Com os exames, a Dra. sabe se a queda é genética, hormonal, nutricional ou mista — e monta o protocolo. As sessões combinam LED de baixa potência, que estimula o folículo sem calor nem dor, com aplicação de medicamentos direto no couro cabeludo, onde o comprimido e a loção não chegam com a mesma força. Prescrição oral e tópica completa o plano." },
     steps: [
       { t: "Registro", d: "Fotos padronizadas e tricoscopia de acompanhamento para comparar a evolução." },
-      { t: "LED de baixa potência", d: "15 minutos de capacete, sem calor e, em geral, sem desconforto." },
+      { t: "LED de baixa potência", d: "15 minutos de capacete. Sem calor; você só espera." },
       { t: "Medicamentos no couro cabeludo", d: "Microaplicações nos pontos marcados. Cerca de 30 minutos. Desconforto leve, tolerado sem anestesia na maioria dos casos." },
       { t: "Orientações e volta pra casa", d: "Cuidados por escrito, prescrição e o WhatsApp da clínica." },
     ],
     after: ["Sem afastamento. Pode haver pequenos pontos vermelhos e sensibilidade no couro cabeludo por 1 a 2 dias. Lavar o cabelo após 12 horas; sem sol direto e sem piscina por 5 dias.", "Ciclo do cabelo é lento: os primeiros sinais (menos queda, fios novos finos) aparecem em cerca de 3 meses, e o resultado se consolida entre 6 e 12 meses. Sessões quinzenais ou mensais, espaçadas conforme a resposta. Alopecia hereditária é crônica: sem manutenção, o ganho se perde ao longo do tempo. A Dra. é direta sobre isso desde a primeira consulta."],
     who: { title: "Médica na sala, do começo ao fim.", text: "Quem diagnostica é quem trata. A Dra. Lorena Lacerda faz a tricoscopia, interpreta os exames, prescreve e aplica pessoalmente.", crm: "CRM-PA 15626" },
     faq: [
-      { q: "Serve para calvície de família?", a: "Pode ajudar a frear a queda e a fortalecer os fios que ainda existem, com resposta que varia de pessoa para pessoa. Não faz nascer cabelo onde o folículo já morreu — para isso a indicação é transplante, e a Dra. vai dizer isso." },
+      { q: "Serve para calvície de família?", a: "Pode frear a queda e fortalecer os fios que ainda existem. Não faz nascer cabelo onde o folículo já morreu — para isso a indicação é transplante, e a Dra. vai dizer isso." },
       { q: "Dói?", a: "O LED não sente nada. As aplicações são picadas leves e rápidas." },
       { q: "Em quanto tempo vejo resultado?", a: "Três meses para os primeiros sinais, seis a doze para o resultado. Cabelo cresce cerca de 1 cm por mês; não tem como acelerar isso." },
       { q: "Preciso mesmo dos exames?", a: "Precisa. Ferro, tireoide e hormônios alterados sabotam qualquer tratamento capilar. Tratar sem isso é tratar às cegas." },

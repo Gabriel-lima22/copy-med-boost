@@ -108,7 +108,7 @@ const clip = (text: string, max = 158) => {
 const PROCEDURE_ROUTES: SeoRoute[] = Object.entries(PROCEDIMENTOS).map(([slug, p]) => {
   const path = procedurePath(slug);
   const url = `${SITE_URL}${path}`;
-  const description = clip(p.subtitle);
+  const description = clip(`${p.subtitle} Avaliação com a Dra. Lorena Lacerda, em Marabá.`);
   return {
     path,
     title: `${p.name} em Marabá | Clínica Lacerda`,
