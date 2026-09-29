@@ -81,7 +81,7 @@ export const PROCEDURE_WHATSAPP_MESSAGES: Record<string, string> = {
 
 /** Map route paths to WhatsApp messages */
 export const ROUTE_WHATSAPP_MESSAGES: Record<string, string> = {
-  "/": "Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.",
+  "/": "Oi, vim pelo site e tenho interesse nos procedimentos.",
   "/harmonizacao-facial": "Oi, vim pelo Google e tenho interesse em Harmonização Facial.",
   "/preenchimento-labial": "Oi, vim pelo Google e tenho interesse em Preenchimento Labial.",
   "/bioestimuladores-colageno": "Oi, vim pelo Google e tenho interesse em Bioestimuladores de Colágeno.",

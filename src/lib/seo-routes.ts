@@ -33,7 +33,14 @@ export const businessSchema: Record<string, unknown> = {
   image: `${SITE_URL}/og/default.jpg`,
   logo: `${SITE_URL}/icon-512x512.png`,
   telephone: "+5594991521617",
-  address: { "@type": "PostalAddress", addressLocality: "Marabá", addressRegion: "PA", addressCountry: "BR" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Fl27, QD07, LT08 - Nova Marabá",
+    addressLocality: "Marabá",
+    addressRegion: "PA",
+    postalCode: "68509-160",
+    addressCountry: "BR",
+  },
   geo: { "@type": "GeoCoordinates", latitude: "-5.346683", longitude: "-49.096493" },
   hasMap: "https://www.google.com/maps/search/?api=1&query=-5.346683,-49.096493",
   medicalSpecialty: "PlasticSurgery",
@@ -67,9 +74,9 @@ export const businessSchema: Record<string, unknown> = {
 const STATIC_ROUTES: SeoRoute[] = [
   {
     path: "/",
-    title: "Clínica Lacerda | Dra. Lorena Lacerda - Medicina Estética em Marabá",
+    title: "Clínica Lacerda — Medicina Estética em Marabá | Dra. Lorena Lacerda",
     description:
-      "Clínica Lacerda — Medicina Estética em Marabá/PA com Dra. Lorena Lacerda (CRM 15626). Harmonização facial, preenchimento, bioestimuladores, laser CO2 e mais. Agende sua avaliação.",
+      "Clínica Lacerda — Medicina Estética em Marabá/PA com Dra. Lorena Lacerda (CRM-PA 15626). Laser CO2, endolaser, harmonização facial, blefaroplastia e mais. Agende sua avaliação.",
     ogTitle: "Clínica Lacerda | Medicina Estética em Marabá",
     ogDescription: "Medicina Estética com olhar humanizado. Dra. Lorena Lacerda — CRM 15626.",
     ogImage: "default",

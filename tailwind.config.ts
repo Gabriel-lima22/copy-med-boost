@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      screens: {
+        // Quebra celular/desktop do design novo (HANDOFF.md)
+        d: "900px",
+      },
       fontFamily: {
         heading: ["'Cormorant Garamond'", "serif"],
         body: ["'Montserrat'", "sans-serif"],
@@ -57,6 +61,19 @@ export default {
           dark: "hsl(var(--gold-dark))",
         },
         charcoal: "hsl(var(--charcoal))",
+        // Paleta do design novo (HANDOFF.md, "Sistema visual")
+        cl: {
+          bg: "#FBF9F5",
+          sand: "#F3EEE6",
+          line: "#E6DFD3",
+          ink: "#1C1916",
+          "ink-hover": "#2B2620",
+          text: "#4A443C",
+          muted: "#6B625A",
+          gold: "#7A5C24",
+          "gold-soft": "#C9A66B",
+          cream: "#F3E8D2",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
