@@ -102,8 +102,9 @@ const clip = (text: string, max = 158) => {
  * Paginas de procedimento (src/pages/Procedimento.tsx), uma por slug de
  * PROCEDIMENTOS. O og:image de cada uma e public/og/<slug>.jpg (npm run images).
  *
- * Sem `reviewedBy`/`lastReviewed` no MedicalWebPage: o texto veio do handoff do
- * design e so pode declarar revisao medica depois que a Dra. Lorena validar.
+ * `reviewedBy`/`lastReviewed`: texto revisado pela Dra. Lorena (confirmado pelo
+ * Gabriel em 29/09/2026). Ao mudar conteudo clinico em procedimentos-content.ts,
+ * so atualizar a data depois de nova revisao dela.
  */
 const PROCEDURE_ROUTES: SeoRoute[] = Object.entries(PROCEDIMENTOS).map(([slug, p]) => {
   const path = procedurePath(slug);
@@ -123,6 +124,8 @@ const PROCEDURE_ROUTES: SeoRoute[] = Object.entries(PROCEDIMENTOS).map(([slug, p
         description,
         url,
         inLanguage: "pt-BR",
+        lastReviewed: "2026-09-29",
+        reviewedBy: { "@type": "Physician", name: "Dra. Lorena Lacerda", identifier: "CRM-PA 15626" },
         about: { "@type": "MedicalProcedure", name: p.name },
         publisher: { "@type": "MedicalBusiness", name: "Clínica Lacerda", url: SITE_URL },
       },
