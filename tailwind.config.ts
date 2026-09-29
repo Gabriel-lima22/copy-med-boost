@@ -111,6 +111,18 @@ export default {
           "0%, 100%": { boxShadow: "0 0 20px rgba(200,169,110,0.2)" },
           "50%": { boxShadow: "0 0 40px rgba(200,169,110,0.4)" },
         },
+        // Dica de "arraste" do carrossel "Veja também" (design novo)
+        "cl-swipe": {
+          "0%, 15%": { transform: "translateX(0)" },
+          "45%": { transform: "translateX(-56px)" },
+          "75%, 100%": { transform: "translateX(0)" },
+        },
+        "cl-hand": {
+          "0%, 10%": { transform: "translateX(0)", opacity: "0" },
+          "15%": { opacity: "1" },
+          "45%": { transform: "translateX(-48px)", opacity: "1" },
+          "60%, 100%": { transform: "translateX(-48px)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -118,6 +130,8 @@ export default {
         float: "float 6s ease-in-out infinite",
         shimmer: "shimmer 3s linear infinite",
         "pulse-gold": "pulse-gold 2s ease-in-out infinite",
+        "cl-swipe": "cl-swipe 2.2s cubic-bezier(.4,0,.2,1) .3s 2",
+        "cl-hand": "cl-hand 2.2s cubic-bezier(.4,0,.2,1) .3s 2",
       },
     },
   },

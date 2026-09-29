@@ -23,10 +23,10 @@ export const WhatsAppBar = ({
 }: WhatsAppBarProps) => (
   <>
     <div className="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between gap-3 border-t border-cl-line bg-cl-bg/95 px-4 pb-3.5 pt-3 backdrop-blur-md d:hidden">
-      <div className="text-xs leading-snug text-cl-text">{label}</div>
+      <div className="min-w-0 text-xs leading-snug text-cl-text">{label}</div>
       <WhatsAppLink
         message={message}
-        className="flex h-[46px] items-center gap-2 whitespace-nowrap rounded-full bg-cl-ink px-[18px] text-sm font-semibold text-cl-cream no-underline"
+        className="flex h-[46px] flex-none items-center gap-2 whitespace-nowrap rounded-full bg-cl-ink px-[18px] text-sm font-semibold text-cl-cream no-underline"
       >
         {button}
       </WhatsAppLink>

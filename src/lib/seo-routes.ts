@@ -1,5 +1,5 @@
-import { procedures } from "@/lib/procedures-data";
-import { ENDOLASER_FAQ } from "@/lib/endolaser-faq";
+import { PROCEDIMENTOS } from "@/lib/procedimentos-content";
+import { procedurePath } from "@/lib/procedimentos-v2";
 
 export const SITE_URL = "https://clinicalacerda.com";
 
@@ -83,93 +83,6 @@ const STATIC_ROUTES: SeoRoute[] = [
     jsonLd: [businessSchema],
   },
   {
-    path: "/mini-lipo-localizada",
-    title: "Mini Lipo Localizada em Marabá - Clínica Lacerda | Dra. Lorena Lacerda",
-    description:
-      "Mini lipoaspiração localizada com microcânulas em Marabá/PA. Recuperação rápida, resultado definitivo. Dra. Lorena Lacerda — CRM 15626.",
-    ogTitle: "Mini Lipo Localizada em Marabá - Clínica Lacerda",
-    ogDescription: "Mini lipoaspiração com microcânulas. Recuperação rápida e resultado definitivo.",
-    ogImage: "mini-lipo-localizada",
-  },
-  {
-    path: "/endolaser",
-    title: "Endolaser em Marabá - Clínica Lacerda | Dra. Lorena Lacerda",
-    description:
-      "Endolaser em Marabá/PA — laser aplicado sob a pele, indicado para avaliação de flacidez facial e corporal. Dra. Lorena Lacerda, CRM-PA 15626. Agende sua avaliação.",
-    ogTitle: "Endolaser em Marabá - Clínica Lacerda",
-    ogDescription:
-      "Laser endodérmico aplicado sob a pele, indicado para avaliação de flacidez facial e corporal.",
-    ogImage: "endolaser",
-    jsonLd: [
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalProcedure",
-        name: "Endolaser",
-        alternateName: ["Laser endodérmico", "Endolifting"],
-        description:
-          "Técnica em que uma fibra óptica fina é introduzida sob a pele por uma microperfuração, entregando energia de laser na camada subdérmica. O estímulo térmico controlado pode auxiliar na retração do colágeno existente e no estímulo à produção de colágeno novo.",
-        url: `${SITE_URL}/endolaser`,
-        image: `${SITE_URL}/og/endolaser.jpg`,
-        procedureType: "https://schema.org/PercutaneousProcedure",
-        bodyLocation: ["Face", "Região submentoniana", "Pescoço", "Colo", "Braços", "Abdômen", "Coxas"],
-        howPerformed:
-          "Realizado em ambiente ambulatorial, com anestesia local. Uma fibra óptica é introduzida sob a pele através de uma microperfuração e a energia do laser é aplicada na camada subdérmica.",
-        preparation:
-          "Avaliação médica prévia com histórico de saúde e exame da área. Quando indicado, são solicitados exames e orientados ajustes prévios, como a suspensão de determinadas medicações.",
-        followup:
-          "Consultas de retorno para acompanhamento da evolução. A resposta é progressiva e varia conforme as características individuais de cada paciente.",
-        relevantSpecialty: "https://schema.org/Dermatology",
-        provider: {
-          "@type": "MedicalBusiness",
-          name: "Clínica Lacerda",
-          url: SITE_URL,
-          address: { "@type": "PostalAddress", addressLocality: "Marabá", addressRegion: "PA", addressCountry: "BR" },
-        },
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalWebPage",
-        name: "Endolaser em Marabá",
-        description:
-          "Página informativa sobre o Endolaser na Clínica Lacerda, em Marabá/PA.",
-        url: `${SITE_URL}/endolaser`,
-        inLanguage: "pt-BR",
-        // TODO: acrescentar `lastReviewed` e `reviewedBy` (Physician, Dra. Lorena
-        // Lacerda, CRM-PA 15626) SOMENTE depois que a medica validar o conteudo.
-        // Declarar revisao medica antes que ela aconteca seria falso.
-        about: { "@type": "MedicalProcedure", name: "Endolaser" },
-        publisher: { "@type": "MedicalBusiness", name: "Clínica Lacerda", url: SITE_URL },
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: ENDOLASER_FAQ.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: { "@type": "Answer", text: item.answer },
-        })),
-      },
-    ],
-  },
-  {
-    path: "/sobre",
-    title: "Sobre a Dra. Lorena Lacerda - Clínica Lacerda | Medicina Estética em Marabá",
-    description:
-      "Conheça a Dra. Lorena Lacerda, médica especialista em Medicina Estética em Marabá/PA. CRM 15626. Formada pela UNIRG.",
-    ogTitle: "Dra. Lorena Lacerda - Medicina Estética em Marabá",
-    ogDescription: "Médica especialista em Medicina Estética. CRM 15626.",
-    ogImage: "sobre",
-  },
-  {
-    path: "/contato",
-    title: "Contato - Clínica Lacerda | Medicina Estética em Marabá",
-    description:
-      "Entre em contato com a Clínica Lacerda em Marabá/PA. Agende sua avaliação com a Dra. Lorena Lacerda — CRM 15626.",
-    ogTitle: "Contato - Clínica Lacerda",
-    ogDescription: "Agende sua avaliação em Marabá/PA.",
-    ogImage: "contato",
-  },
-  {
     path: "/politica-privacidade",
     title: "Política de Privacidade - Clínica Lacerda",
     description:
@@ -178,36 +91,53 @@ const STATIC_ROUTES: SeoRoute[] = [
   },
 ];
 
-/** Fichas renderizadas por ProcedurePage: o head vem da propria ficha. */
-const PROCEDURE_ROUTES: SeoRoute[] = Object.values(procedures).map((p) => ({
-  path: `/${p.slug}`,
-  title: p.metaTitle,
-  description: p.metaDescription,
-  ogTitle: `${p.title} - Clínica Lacerda`,
-  ogDescription: p.subtitle,
-  ogImage: p.slug,
-  jsonLd: [
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalWebPage",
-      name: p.title,
-      description: p.metaDescription,
-      url: `${SITE_URL}/${p.slug}`,
-      lastReviewed: "2026-08-21",
-      reviewedBy: { "@type": "Physician", name: "Dra. Lorena Lacerda", credential: "CRM 15626" },
-      about: { "@type": "MedicalProcedure", name: p.shortTitle, procedureType: "NoninvasiveProcedure" },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: p.faq.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-      })),
-    },
-  ],
-}));
+/** Corta no ultimo espaco antes do limite, para a descricao nao sair truncada pelo Google. */
+const clip = (text: string, max = 158) => {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,.;:—-]+$/, "")}…`;
+};
+
+/**
+ * Paginas de procedimento (src/pages/Procedimento.tsx), uma por slug de
+ * PROCEDIMENTOS. O og:image de cada uma e public/og/<slug>.jpg (npm run images).
+ *
+ * Sem `reviewedBy`/`lastReviewed` no MedicalWebPage: o texto veio do handoff do
+ * design e so pode declarar revisao medica depois que a Dra. Lorena validar.
+ */
+const PROCEDURE_ROUTES: SeoRoute[] = Object.entries(PROCEDIMENTOS).map(([slug, p]) => {
+  const path = procedurePath(slug);
+  const url = `${SITE_URL}${path}`;
+  const description = clip(p.subtitle);
+  return {
+    path,
+    title: `${p.name} em Marabá | Clínica Lacerda`,
+    description,
+    ogTitle: `${p.name} em Marabá - Clínica Lacerda`,
+    ogImage: slug,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        name: `${p.name} em Marabá`,
+        description,
+        url,
+        inLanguage: "pt-BR",
+        about: { "@type": "MedicalProcedure", name: p.name },
+        publisher: { "@type": "MedicalBusiness", name: "Clínica Lacerda", url: SITE_URL },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: p.faq.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      },
+    ],
+  };
+});
 
 export const SEO_ROUTES: SeoRoute[] = [...STATIC_ROUTES, ...PROCEDURE_ROUTES];
 

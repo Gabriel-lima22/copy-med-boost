@@ -76,6 +76,15 @@ export const SiteHeader = ({ whatsappMessage }: SiteHeaderProps) => {
 
       {menuOpen && (
         <nav className="flex flex-col border-t border-cl-line bg-cl-bg px-5 pb-4 pt-2 d:hidden">
+          {!onHome && (
+            <Link
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="border-b border-cl-line px-1 py-3.5 font-heading text-[22px] font-semibold text-cl-ink no-underline"
+            >
+              Início
+            </Link>
+          )}
           {NAV.map((item, i) => (
             <a
               key={item.hash}

@@ -7,7 +7,7 @@ import { WhatsAppBar } from "@/components/v2/WhatsAppBar";
 import { WhatsAppIcon, WhatsAppLink } from "@/components/v2/WhatsAppLink";
 import { PROCEDURE_CARDS, procedurePath } from "@/lib/procedimentos-v2";
 import { HOME_FAQ, HOME_REVIEWS } from "@/lib/home-v2";
-import { ROUTE_WHATSAPP_MESSAGES } from "@/lib/whatsapp";
+import { HOME_WHATSAPP_MESSAGE } from "@/lib/whatsapp";
 import heroDesktop from "@/assets/v2/dra-lorena-hero.webp";
 import heroMobile from "@/assets/v2/banner-dra-lorena.webp";
 import retrato from "@/assets/v2/dra-lorena-retrato.webp";
@@ -17,7 +17,7 @@ import consultorio from "@/assets/v2/consultorio.webp";
 import fachada from "@/assets/v2/fachada.webp";
 import hegon from "@/assets/v2/hegon-co2.webp";
 
-const WA_MESSAGE = ROUTE_WHATSAPP_MESSAGES["/"];
+const WA_MESSAGE = HOME_WHATSAPP_MESSAGE;
 
 const kicker = "text-[11px] font-semibold uppercase tracking-[.2em] text-cl-gold";
 const h2 = "m-0 font-heading text-[clamp(32px,3.6vw,48px)] font-medium leading-[1.05]";

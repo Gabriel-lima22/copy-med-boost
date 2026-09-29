@@ -2,17 +2,6 @@ import { getAdsCode } from "@/lib/adsAttribution";
 
 export const WHATSAPP_NUMBER = "5594992693532";
 
-/**
- * Numero de atendimento da clinica — o mesmo que aparece no rodape, no bloco de
- * Localizacao da home e no `telephone` do businessSchema.
- *
- * Atencao: e diferente do WHATSAPP_NUMBER acima, que e o que todos os demais
- * CTAs do site usam. A divergencia e anterior a esta pagina e esta anotada em
- * /root/cutover/ANALYTICS.md — enquanto nao for resolvida, so a rota
- * /endolaser aponta para ca.
- */
-export const WHATSAPP_NUMBER_CLINICA = "5594991521617";
-
 /** Codigo de origem do Ads que ja esteja no fim da mensagem, ex. " [G-123-laser]". */
 const ADS_CODE_AT_END = /\s*\[G(?:-[a-z0-9-]*)?\]$/;
 
@@ -67,40 +56,21 @@ export const handleWhatsAppClick = (
   }
 };
 
-export const PROCEDURE_WHATSAPP_MESSAGES: Record<string, string> = {
-  "harmonizacao-facial": "Oi, vim pelo Google e tenho interesse em Harmonização Facial.",
-  "preenchimento-labial": "Oi, vim pelo Google e tenho interesse em Preenchimento Labial.",
-  "bioestimuladores-colageno": "Oi, vim pelo Google e tenho interesse em Bioestimuladores de Colágeno.",
-  "laser-co2-fracionado": "Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.",
-  "tratamento-capilar": "Oi, vim pelo Google e tenho interesse em Tratamento Capilar.",
-  "skincare-manchas": "Oi, vim pelo Google e tenho interesse em Tratamento de Manchas e Skincare.",
-  "mini-lipo-localizada": "Oi, vim pelo Google e tenho interesse em Mini Lipo Localizada.",
-  endolaser: "Oi, vim pelo Google e gostaria de agendar uma avaliação para Endolaser.",
-  default: "Oi, vim pelo site da Clínica Lacerda e gostaria de saber mais sobre os tratamentos disponíveis.",
+export const HOME_WHATSAPP_MESSAGE = "Oi, vim pelo site e tenho interesse nos procedimentos.";
+
+/**
+ * Nome do procedimento na mensagem das landing pages, exatamente como no
+ * HANDOFF.md: e por esse texto que o atendimento identifica o interesse.
+ */
+const PROCEDURE_WHATSAPP_NAMES: Record<string, string> = {
+  "laser-co2-fracionado": "CO2",
+  endolaser: "Endolaser",
+  blefaroplastia: "Blefaroplastia",
+  "modelacao-glutea": "Remodelação Glútea",
+  "harmonizacao-facial": "Harmonização Facial",
+  "mini-lipo-localizada": "Mini Lipo",
+  "tratamento-capilar": "Tratamento Capilar",
 };
 
-/** Map route paths to WhatsApp messages */
-export const ROUTE_WHATSAPP_MESSAGES: Record<string, string> = {
-  "/": "Oi, vim pelo site e tenho interesse nos procedimentos.",
-  "/harmonizacao-facial": "Oi, vim pelo Google e tenho interesse em Harmonização Facial.",
-  "/preenchimento-labial": "Oi, vim pelo Google e tenho interesse em Preenchimento Labial.",
-  "/bioestimuladores-colageno": "Oi, vim pelo Google e tenho interesse em Bioestimuladores de Colágeno.",
-  "/laser-co2-fracionado": "Oi, vim pelo Google e tenho interesse em Laser CO2 Fracionado.",
-  "/tratamento-capilar": "Oi, vim pelo Google e tenho interesse em Tratamento Capilar.",
-  "/skincare-manchas": "Oi, vim pelo Google e tenho interesse em Tratamento de Manchas e Skincare.",
-  "/mini-lipo-localizada": "Oi, vim pelo Google e tenho interesse em Mini Lipo Localizada.",
-  "/endolaser": "Oi, vim pelo Google e gostaria de agendar uma avaliação para Endolaser.",
-  "/contato": "Oi, vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.",
-  "/sobre": "Oi, vim pelo site da Clínica Lacerda e gostaria de agendar uma avaliação.",
-};
-
-/** Rotas que atendem pelo numero da clinica em vez do WHATSAPP_NUMBER padrao. */
-const ROUTES_ON_CLINICA_NUMBER = new Set(["/endolaser"]);
-
-export const getWhatsAppLinkForRoute = (pathname: string) => {
-  const message = ROUTE_WHATSAPP_MESSAGES[pathname] || ROUTE_WHATSAPP_MESSAGES["/"];
-  const number = ROUTES_ON_CLINICA_NUMBER.has(pathname)
-    ? WHATSAPP_NUMBER_CLINICA
-    : WHATSAPP_NUMBER;
-  return createWhatsAppLink(message, number);
-};
+export const procedureWhatsAppMessage = (slug: string) =>
+  `Oi, vim pelo Google e tenho interesse no ${PROCEDURE_WHATSAPP_NAMES[slug] ?? "procedimento"}.`;

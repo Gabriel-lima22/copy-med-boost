@@ -14,15 +14,13 @@ const out = join(root, "public", "og");
 const MAP = {
   default: "hero-home.jpg",
   "harmonizacao-facial": "proc-harmonizacao.jpg",
-  "preenchimento-labial": "proc-labial.jpg",
-  "bioestimuladores-colageno": "proc-bioestimuladores.jpg",
   "laser-co2-fracionado": "proc-laser.jpg",
   "tratamento-capilar": "proc-capilar.jpg",
-  "skincare-manchas": "proc-skincare-hero.jpg",
   "mini-lipo-localizada": "minilipo-hero.jpg",
   endolaser: "hero-skin.jpg",
-  sobre: "cta-bg.jpg",
-  contato: "minilipo-consulta.jpg",
+  // Paginas que so existem no design novo: fotos de assets-src/v2
+  blefaroplastia: "v2/proc-blefaro.jpg",
+  "modelacao-glutea": "v2/proc-gluteo.jpg",
 };
 
 const W = 1200;

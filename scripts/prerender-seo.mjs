@@ -6,9 +6,10 @@
 // executam nada - e sao eles que montam a previa de todo link compartilhado.
 //
 // Fonte dos textos: src/lib/seo-routes.ts (a mesma que o <SeoHead> usa).
-// Saida: dist/<slug>.html por rota, servido pelo nginx via try_files $uri.html.
+// Saida: dist/<rota>.html por rota, servido pelo nginx via try_files $uri.html,
+// mais uma pagina de redirecionamento por URL antiga (src/lib/legacy-redirects.ts).
 import { build } from "esbuild";
-import { readFile, writeFile, rm } from "node:fs/promises";
+import { readFile, writeFile, rm, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -18,17 +19,25 @@ const dist = join(root, process.env.OUT_DIR || "dist");
 const tmp = join(dist, ".seo-routes.mjs");
 
 // seo-routes.ts e TypeScript e usa o alias "@/": compila num modulo temporario.
+// As imagens importadas pelo conteudo das paginas nao interessam aqui (loader "empty").
 await build({
-  entryPoints: [join(root, "src", "lib", "seo-routes.ts")],
+  stdin: {
+    contents: 'export * from "./src/lib/seo-routes.ts"; export * from "./src/lib/legacy-redirects.ts";',
+    resolveDir: root,
+    loader: "ts",
+  },
   outfile: tmp,
   bundle: true,
   format: "esm",
   platform: "node",
   logLevel: "warning",
   alias: { "@": join(root, "src") },
+  loader: { ".webp": "empty", ".png": "empty", ".jpg": "empty", ".svg": "empty" },
 });
 
-const { SEO_ROUTES, canonicalFor, ogImageFor, SITE_URL } = await import(`file://${tmp}?t=${Date.now()}`);
+const { SEO_ROUTES, LEGACY_REDIRECTS, canonicalFor, ogImageFor, SITE_URL } = await import(
+  `file://${tmp}?t=${Date.now()}`
+);
 await rm(tmp);
 
 const template = await readFile(join(dist, "index.html"), "utf8");
@@ -87,11 +96,49 @@ const headFor = (route) => {
   return tags.join("\n");
 };
 
+// Rotas aninhadas (/procedimentos/<slug>) viram dist/procedimentos/<slug>.html.
+const writeRoute = async (path, html) => {
+  const file = path === "/" ? "index.html" : `${path.slice(1)}.html`;
+  await mkdir(dirname(join(dist, file)), { recursive: true });
+  await writeFile(join(dist, file), html, "utf8");
+  return file;
+};
+
 for (const route of SEO_ROUTES) {
   const html = stripped.replace("  </head>", `${headFor(route)}\n  </head>`);
-  const file = route.path === "/" ? "index.html" : `${route.path.slice(1)}.html`;
-  await writeFile(join(dist, file), html, "utf8");
-  console.log(`${file.padEnd(32)} ${route.title.slice(0, 58)}`);
+  const file = await writeRoute(route.path, html);
+  console.log(`${file.padEnd(40)} ${route.title.slice(0, 50)}`);
 }
 
-console.log(`\n${SEO_ROUTES.length} rotas com <head> proprio no HTML servido (${SITE_URL})`);
+// URLs do site antigo (src/lib/legacy-redirects.ts): pagina minima que
+// redireciona na hora. O location.replace leva junto a query (gclid, utm_*) de
+// anuncio antigo; o meta refresh cobre quem nao roda JavaScript, e o Google
+// trata refresh imediato como redirecionamento permanente.
+const redirectHtml = (to) => {
+  const [path, hash] = to.split("#");
+  const canonical = canonicalFor(path === "/" ? "/" : path);
+  const js = `location.replace(${JSON.stringify(path)}+location.search+${JSON.stringify(hash ? `#${hash}` : "")})`;
+  return `<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clínica Lacerda</title>
+    <link rel="canonical" href="${canonical}" />
+    <script>${js}</script>
+    <meta http-equiv="refresh" content="0; url=${esc(to)}" />
+  </head>
+  <body>
+    <a href="${esc(to)}">Continuar para a página da Clínica Lacerda</a>
+  </body>
+</html>
+`;
+};
+
+for (const [from, to] of LEGACY_REDIRECTS) {
+  const file = await writeRoute(from, redirectHtml(to));
+  console.log(`${file.padEnd(40)} -> ${to}`);
+}
+
+console.log(
+  `\n${SEO_ROUTES.length} rotas com <head> proprio e ${LEGACY_REDIRECTS.length} redirecionamentos no HTML servido (${SITE_URL})`,
+);

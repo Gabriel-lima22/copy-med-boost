@@ -2,22 +2,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
-import LaserCO2 from "./pages/LaserCO2";
-import HarmonizacaoFacial from "./pages/HarmonizacaoFacial";
-import PreenchimentoLabial from "./pages/PreenchimentoLabial";
-import Bioestimuladores from "./pages/Bioestimuladores";
-import TratamentoCapilar from "./pages/TratamentoCapilar";
-import SkincareManchas from "./pages/SkincareManchas";
-import MiniLipo from "./pages/MiniLipo";
-import Endolaser from "./pages/Endolaser";
-import Sobre from "./pages/Sobre";
-import Contato from "./pages/Contato";
+import Procedimento from "./pages/Procedimento";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import NotFound from "./pages/NotFound";
+import { ScrollToTop } from "./components/ScrollToTop";
 import AnalyticsTracker from "./components/AnalyticsTracker";
+import { LEGACY_REDIRECTS } from "./lib/legacy-redirects";
+import { LegacyRedirect } from "./components/LegacyRedirect";
 
 const queryClient = new QueryClient();
 
@@ -29,25 +23,15 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <AnalyticsTracker />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/harmonizacao-facial" element={<HarmonizacaoFacial />} />
-            <Route path="/preenchimento-labial" element={<PreenchimentoLabial />} />
-            <Route path="/bioestimuladores-colageno" element={<Bioestimuladores />} />
-            <Route path="/laser-co2-fracionado" element={<LaserCO2 />} />
-            <Route path="/tratamento-capilar" element={<TratamentoCapilar />} />
-            <Route path="/skincare-manchas" element={<SkincareManchas />} />
-            <Route path="/mini-lipo-localizada" element={<MiniLipo />} />
-            <Route path="/endolaser" element={<Endolaser />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contato" element={<Contato />} />
+            <Route path="/procedimentos/:slug" element={<Procedimento />} />
             <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
-            {/* Legacy redirects */}
-            <Route path="/toxina-botulinica" element={<Navigate to="/harmonizacao-facial" replace />} />
-            <Route path="/toxina-botulinica-botox" element={<Navigate to="/harmonizacao-facial" replace />} />
-            <Route path="/botox" element={<Navigate to="/harmonizacao-facial" replace />} />
-            <Route path="/epilacao-laser" element={<Navigate to="/" replace />} />
-            <Route path="/laser-co2" element={<LaserCO2 />} />
+            {/* URLs do site antigo (ver src/lib/legacy-redirects.ts) */}
+            {LEGACY_REDIRECTS.map(([from, to]) => (
+              <Route key={from} path={from} element={<LegacyRedirect to={to} />} />
+            ))}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

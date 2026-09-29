@@ -1,34 +1,30 @@
 import { SeoHead } from "@/components/SeoHead";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { SiteHeader } from "@/components/v2/SiteHeader";
+import { SiteFooter } from "@/components/v2/SiteFooter";
+import { HOME_WHATSAPP_MESSAGE } from "@/lib/whatsapp";
 
 const PoliticaPrivacidade = () => {
   return (
-    <>
+    <div className="flex min-h-screen flex-col bg-cl-bg font-body text-cl-ink antialiased">
       <SeoHead path="/politica-privacidade" />
 
-      <SiteHeader />
-      <main className="pt-20">
-        <div className="container">
-          <Breadcrumbs items={[{ label: "Política de Privacidade" }]} />
-        </div>
-
-        <section className="py-12 lg:py-20">
-          <div className="container max-w-3xl">
-            <h1 className="mb-8 font-heading text-4xl font-bold text-foreground">
+      <SiteHeader whatsappMessage={HOME_WHATSAPP_MESSAGE} />
+      <main className="flex-1">
+        <section className="py-12 d:py-20">
+          <div className="mx-auto max-w-3xl px-[clamp(20px,4vw,48px)]">
+            <h1 className="mb-8 font-heading text-4xl font-medium text-cl-ink d:text-5xl">
               Política de Privacidade
             </h1>
 
-            <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-[15px] leading-relaxed text-cl-text">
               <p>Última atualização: Agosto de 2026</p>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">1. Informações Gerais</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">1. Informações Gerais</h2>
               <p>
-                A Clínica Lacerda, pessoa jurídica de direito privado, com sede em Marabá/PA, inscrita no CNPJ sob o nº [a definir], é a controladora dos dados pessoais coletados neste site, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
+                A Clínica Lacerda (LACERDA MEDICINA E ESTETICA LTDA - ME), pessoa jurídica de direito privado, com sede em Marabá/PA, inscrita no CNPJ sob o nº 63.449.483/0001-26, é a controladora dos dados pessoais coletados neste site, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
               </p>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">2. Dados Coletados</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">2. Dados Coletados</h2>
               <p>Podemos coletar os seguintes dados pessoais:</p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>Nome completo</li>
@@ -36,7 +32,7 @@ const PoliticaPrivacidade = () => {
                 <li>Dados de navegação (cookies, IP, páginas visitadas)</li>
               </ul>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">3. Finalidade do Tratamento</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">3. Finalidade do Tratamento</h2>
               <p>Os dados pessoais são coletados para as seguintes finalidades:</p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>Agendamento de consultas e avaliações</li>
@@ -45,12 +41,12 @@ const PoliticaPrivacidade = () => {
                 <li>Campanhas de marketing (Google Ads, redes sociais)</li>
               </ul>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">4. Compartilhamento de Dados</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">4. Compartilhamento de Dados</h2>
               <p>
                 Seus dados pessoais não serão compartilhados com terceiros, exceto quando necessário para cumprir obrigações legais ou com prestadores de serviços essenciais (como plataformas de marketing), sempre com garantias de proteção adequadas.
               </p>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">5. Cookies e Ferramentas de Análise</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">5. Cookies e Ferramentas de Análise</h2>
               <p>
                 Este site utiliza cookies e ferramentas de terceiros para entender como as páginas são usadas e para medir o resultado das campanhas:
               </p>
@@ -72,12 +68,12 @@ const PoliticaPrivacidade = () => {
                 Essas ferramentas não recebem seu nome, seu telefone nem qualquer informação de saúde. Você pode bloquear ou apagar cookies nas configurações do seu navegador e pode solicitar a exclusão dos seus dados de navegação pelo contato indicado abaixo.
               </p>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">6. Segurança</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">6. Segurança</h2>
               <p>
                 Adotamos medidas de segurança técnicas e administrativas para proteger seus dados pessoais contra acessos não autorizados, destruição, perda ou alteração.
               </p>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">7. Seus Direitos</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">7. Seus Direitos</h2>
               <p>Você tem direito a:</p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>Confirmar a existência de tratamento de seus dados</li>
@@ -87,7 +83,7 @@ const PoliticaPrivacidade = () => {
                 <li>Revogar o consentimento a qualquer momento</li>
               </ul>
 
-              <h2 className="font-heading text-2xl font-semibold text-foreground">8. Contato</h2>
+              <h2 className="font-heading text-2xl font-semibold text-cl-ink">8. Contato</h2>
               <p>
                 Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato pelo WhatsApp: (94) 99152-1617.
               </p>
@@ -100,7 +96,7 @@ const PoliticaPrivacidade = () => {
         </section>
       </main>
       <SiteFooter />
-    </>
+    </div>
   );
 };
 
