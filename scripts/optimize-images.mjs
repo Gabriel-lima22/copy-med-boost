@@ -17,11 +17,17 @@ const WIDTHS = [
   [/^dra-lorena-/, 1100],               // hero e retrato do design novo
   [/^banner-/, 1600],                   // hero do celular (design novo)
   [/^logo-/, 200],                      // logo de 44px no cabecalho
+  [/^(sala-procedimentos|recepcao|consultorio|fachada)\./, 800], // galeria da clinica (design novo)
   [/^(proc-|area-|skincare-|minilipo-)/, 900], // cards e imagens de secao
 ];
 const DEFAULT_WIDTH = 1200;
 
 const widthFor = (name) => WIDTHS.find(([re]) => re.test(name))?.[1] ?? DEFAULT_WIDTH;
+
+// Versoes menores para srcset, gravadas como <nome>-<largura>.webp ao lado da principal.
+const VARIANTS = {
+  "banner-dra-lorena": [800], // hero do celular: 390px de tela a 2x
+};
 
 let count = 0;
 let before = 0;
@@ -45,6 +51,13 @@ for (const sub of SUBDIRS) {
       .resize({ width: Math.min(width, meta.width), withoutEnlargement: true })
       .webp({ quality: 78, effort: 5 })
       .toFile(to);
+    for (const w of VARIANTS[basename(file).replace(/\.[^.]+$/, "")] ?? []) {
+      await sharp(from)
+        .rotate()
+        .resize({ width: Math.min(w, meta.width), withoutEnlargement: true })
+        .webp({ quality: 78, effort: 5 })
+        .toFile(to.replace(/\.webp$/, `-${w}.webp`));
+    }
     const [a, b] = [(await stat(from)).size, (await stat(to)).size];
     before += a;
     after += b;

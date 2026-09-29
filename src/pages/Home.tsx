@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SeoHead } from "@/components/SeoHead";
 import { SiteHeader } from "@/components/v2/SiteHeader";
@@ -10,12 +10,16 @@ import { HOME_FAQ, HOME_REVIEWS } from "@/lib/home-v2";
 import { HOME_WHATSAPP_MESSAGE } from "@/lib/whatsapp";
 import heroDesktop from "@/assets/v2/dra-lorena-hero.webp";
 import heroMobile from "@/assets/v2/banner-dra-lorena.webp";
+import heroMobile800 from "@/assets/v2/banner-dra-lorena-800.webp";
 import retrato from "@/assets/v2/dra-lorena-retrato.webp";
 import salaProcedimentos from "@/assets/v2/sala-procedimentos.webp";
 import recepcao from "@/assets/v2/recepcao.webp";
 import consultorio from "@/assets/v2/consultorio.webp";
 import fachada from "@/assets/v2/fachada.webp";
 import hegon from "@/assets/v2/hegon-co2.webp";
+
+// React 18 nao conhece fetchPriority e avisa no build; em minusculo vai direto para o HTML.
+const HIGH_PRIORITY = { fetchpriority: "high" } as Record<string, string>;
 
 const WA_MESSAGE = HOME_WHATSAPP_MESSAGE;
 
@@ -39,7 +43,7 @@ const Hero = () => (
         Dra. Lorena Lacerda · CRM-PA 15626. Avaliação individual, protocolos personalizados e acompanhamento próximo.
       </p>
       <div className="flex flex-wrap gap-3 d:mt-0.5">
-        <WhatsAppLink message={WA_MESSAGE} className={`${btnPrimary} h-[54px] w-full text-[15px] d:h-14 d:w-auto d:px-7`}>
+        <WhatsAppLink placement="hero" message={WA_MESSAGE} className={`${btnPrimary} h-[54px] w-full text-[15px] d:h-14 d:w-auto d:px-7`}>
           <WhatsAppIcon />
           Agendar avaliação
         </WhatsAppLink>
@@ -57,10 +61,12 @@ const Hero = () => (
         <source media="(min-width: 900px)" srcSet={heroDesktop} width={1100} height={1650} />
         <img
           src={heroMobile}
+          srcSet={`${heroMobile800} 800w, ${heroMobile} 1600w`}
+          sizes="100vw"
           alt="Dra. Lorena Lacerda"
           width={1600}
           height={901}
-          fetchPriority="high"
+          {...HIGH_PRIORITY}
           className="absolute inset-0 h-full w-full object-cover object-[100%_20%] d:object-[50%_20%]"
         />
       </picture>
@@ -108,7 +114,7 @@ const Procedures = () => (
           to={procedurePath(p.slug)}
           className="relative flex flex-col overflow-hidden rounded-2xl border border-cl-line bg-white text-cl-ink no-underline transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-cl-gold-soft"
         >
-          <img src={p.img} alt={p.name} loading="lazy" className="aspect-[4/3] w-full bg-[#F7F3EC] object-cover" />
+          <img src={p.img} alt="" loading="lazy" className="aspect-[4/3] w-full bg-[#F7F3EC] object-cover" />
           {i === 0 && (
             <div className="absolute left-2.5 top-2.5 rounded-full bg-cl-gold-soft px-2 py-1 text-[10px] font-semibold uppercase tracking-[.1em] text-cl-ink">
               Mais procurado
@@ -120,7 +126,7 @@ const Procedures = () => (
           </div>
         </Link>
       ))}
-      <WhatsAppLink
+      <WhatsAppLink placement="card_nao_sabe_qual"
         message={WA_MESSAGE}
         className="flex min-h-[160px] flex-col justify-center gap-2 rounded-2xl bg-cl-ink p-[18px] text-white no-underline hover:bg-cl-ink-hover"
       >
@@ -166,7 +172,7 @@ const About = () => (
             </div>
           ))}
         </div>
-        <WhatsAppLink message={WA_MESSAGE} className={`${btnPrimary} mt-7 inline-flex h-[52px] px-6 text-sm`}>
+        <WhatsAppLink placement="sobre" message={WA_MESSAGE} className={`${btnPrimary} mt-7 inline-flex h-[52px] px-6 text-sm`}>
           Agendar consulta
         </WhatsAppLink>
       </div>
@@ -301,6 +307,45 @@ const Faq = () => (
   </section>
 );
 
+/**
+ * O mapa do Google pesa ~450 KB e o navegador comeca a baixar um iframe
+ * loading="lazy" bem antes dele aparecer. Aqui o iframe so entra quando a secao
+ * chega perto da tela.
+ */
+const LazyMap = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (!("IntersectionObserver" in window)) return setShow(true);
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShow(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="h-full min-h-[280px] w-full overflow-hidden rounded-[14px] bg-cl-sand">
+      {show && (
+        <iframe
+          title="Mapa da Clínica Lacerda"
+          src="https://maps.google.com/maps?q=-5.346683,-49.096493&z=16&hl=pt-BR&output=embed"
+          className="h-full min-h-[280px] w-full border-0"
+        />
+      )}
+    </div>
+  );
+};
+
 const Contact = () => {
   const label = "text-[11px] font-semibold uppercase tracking-[.12em] text-cl-gold";
   return (
@@ -324,7 +369,7 @@ const Contact = () => {
             </div>
             <div>
               <div className={label}>WhatsApp</div>
-              <WhatsAppLink message={WA_MESSAGE} className="text-cl-text no-underline hover:text-cl-ink">
+              <WhatsAppLink placement="contato_numero" message={WA_MESSAGE} className="text-cl-text no-underline hover:text-cl-ink">
                 (94) 99269-3532
               </WhatsAppLink>
             </div>
@@ -340,16 +385,11 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <WhatsAppLink message={WA_MESSAGE} className={`${btnPrimary} mt-6 h-[54px] text-[15px] d:mt-auto`}>
+          <WhatsAppLink placement="contato" message={WA_MESSAGE} className={`${btnPrimary} mt-6 h-[54px] text-[15px] d:mt-auto`}>
             Agendar avaliação pelo WhatsApp
           </WhatsAppLink>
         </div>
-        <iframe
-          title="Mapa da Clínica Lacerda"
-          src="https://maps.google.com/maps?q=-5.346683,-49.096493&z=16&hl=pt-BR&output=embed"
-          loading="lazy"
-          className="h-full min-h-[280px] w-full rounded-[14px] border-0"
-        />
+        <LazyMap />
       </div>
     </section>
   );

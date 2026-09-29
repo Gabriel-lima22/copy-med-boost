@@ -1,7 +1,3 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
@@ -13,30 +9,32 @@ import AnalyticsTracker from "./components/AnalyticsTracker";
 import { LEGACY_REDIRECTS } from "./lib/legacy-redirects";
 import { LegacyRedirect } from "./components/LegacyRedirect";
 
-const queryClient = new QueryClient();
+/**
+ * Rotas do site, sem o roteador: o navegador usa com BrowserRouter (App) e o
+ * build usa com StaticRouter (entry-server.tsx) para gravar o HTML de cada pagina.
+ */
+export const AppRoutes = () => (
+  <>
+    <AnalyticsTracker />
+    <ScrollToTop />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/procedimentos/:slug" element={<Procedimento />} />
+      <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
+      {/* URLs do site antigo (ver src/lib/legacy-redirects.ts) */}
+      {LEGACY_REDIRECTS.map(([from, to]) => (
+        <Route key={from} path={from} element={<LegacyRedirect to={to} />} />
+      ))}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </>
+);
 
 const App = () => (
   <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AnalyticsTracker />
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/procedimentos/:slug" element={<Procedimento />} />
-            <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
-            {/* URLs do site antigo (ver src/lib/legacy-redirects.ts) */}
-            {LEGACY_REDIRECTS.map(([from, to]) => (
-              <Route key={from} path={from} element={<LegacyRedirect to={to} />} />
-            ))}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   </HelmetProvider>
 );
 

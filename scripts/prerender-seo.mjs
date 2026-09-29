@@ -9,7 +9,7 @@
 // Saida: dist/<rota>.html por rota, servido pelo nginx via try_files $uri.html,
 // mais uma pagina de redirecionamento por URL antiga (src/lib/legacy-redirects.ts).
 import { build } from "esbuild";
-import { readFile, writeFile, rm, mkdir } from "node:fs/promises";
+import { readFile, writeFile, rm, mkdir, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -40,11 +40,25 @@ const { SEO_ROUTES, LEGACY_REDIRECTS, canonicalFor, ogImageFor, SITE_URL } = awa
 );
 await rm(tmp);
 
+// Corpo das paginas: bundle SSR de src/entry-server.tsx (vite build --ssr, ver package.json).
+const ssrDir = join(root, process.env.SSR_DIR || "dist-ssr");
+const { render } = await import(`file://${join(ssrDir, "entry-server.js")}?t=${Date.now()}`);
+
 const template = await readFile(join(dist, "index.html"), "utf8");
+
+// Preload das duas fontes que aparecem na primeira tela (titulo e texto); as
+// outras carregam sob demanda pelo @font-face.
+const assets = await readdir(join(dist, "assets"));
+const fontPreloads = [/^cormorant-garamond-latin-500-normal-.*\.woff2$/, /^montserrat-latin-400-normal-.*\.woff2$/]
+  .map((re) => assets.find((f) => re.test(f)))
+  .filter(Boolean)
+  .map((f) => `    <link rel="preload" href="/assets/${f}" as="font" type="font/woff2" crossorigin />`)
+  .join("\n");
 
 // Tira do molde as tags que passam a ser escritas por rota. O que sobra
 // (fontes, analytics, icones) e igual em todas as paginas.
 const stripped = template
+  .replace("  </head>", `${fontPreloads}\n  </head>`)
   .replace(/[ \t]*<title>[\s\S]*?<\/title>\n?/g, "")
   .replace(/[ \t]*<meta\s+name="description"[\s\S]*?\/>\n?/g, "")
   .replace(/[ \t]*<meta\s+name="robots"[\s\S]*?\/>\n?/g, "")
@@ -105,7 +119,11 @@ const writeRoute = async (path, html) => {
 };
 
 for (const route of SEO_ROUTES) {
-  const html = stripped.replace("  </head>", `${headFor(route)}\n  </head>`);
+  // data-ssr-path: main.tsx so hidrata se a URL aberta for a mesma desta pagina.
+  const body = `<div id="root" data-ssr-path="${route.path}">${render(route.path)}</div>`;
+  const html = stripped
+    .replace("  </head>", `${headFor(route)}\n  </head>`)
+    .replace('<div id="root"></div>', body);
   const file = await writeRoute(route.path, html);
   console.log(`${file.padEnd(40)} ${route.title.slice(0, 50)}`);
 }

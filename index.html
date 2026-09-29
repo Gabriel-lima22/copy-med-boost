@@ -30,12 +30,6 @@
       name="twitter:description"
       content="Medicina Estética com olhar humanizado. Dra. Lorena Lacerda — CRM 15626."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <!--
       IDs de medicao do site. Este e o unico lugar que precisa ser editado.
       Enquanto um ID estiver como SUBSTITUIR, a ferramenta nao carrega e nada e enviado.
@@ -52,18 +46,48 @@
       };
     </script>
 
-    <!-- Google Tag Manager -->
+    <!--
+      Carregamento adiado das tags do Google (GTM e gtag.js do Ads/GA4).
+      Juntas elas ocupam ~1 s de processador no celular e derrubavam a nota do
+      PageSpeed de ~90 para ~58. Aqui os scripts so baixam no primeiro toque,
+      rolagem, tecla ou movimento do mouse - ou 6 s depois do load, para quem nao
+      interage. Tudo que for chamado antes (gtag('config'), conversoes, eventos do
+      dataLayer) fica na fila do dataLayer e e enviado quando os scripts chegam.
+      Troca conhecida: quem toca no WhatsApp no primeiro instante pode sair para o
+      app antes do gtag.js carregar, e essa conversao nao chega ao Ads (o lead e o
+      codigo [G-...] na mensagem nao sao afetados).
+    -->
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-NSJN7LJ3');
+      (function () {
+        var loaded = false;
+        var triggers = ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'];
+        var add = function (src) {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = src;
+          document.head.appendChild(s);
+        };
+        var load = function () {
+          if (loaded) return;
+          loaded = true;
+          triggers.forEach(function (t) { window.removeEventListener(t, load, true); });
+          add('https://www.googletagmanager.com/gtm.js?id=GTM-NSJN7LJ3');
+          add('https://www.googletagmanager.com/gtag/js?id=' + window.__ANALYTICS__.ads);
+        };
+        window.__loadGoogleTags = load;
+        triggers.forEach(function (t) { window.addEventListener(t, load, { capture: true, passive: true }); });
+        window.addEventListener('load', function () { setTimeout(load, 6000); });
+      })();
+    </script>
+
+    <!-- Google Tag Manager (o script em si entra pelo carregador acima) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google Ads + GA4 (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17789690534"></script>
+    <!-- Google Ads + GA4 (gtag.js, carregado pelo carregador adiado acima) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -92,6 +116,9 @@
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a');
         if (!link || !link.href || link.href.indexOf('wa.me') === -1) return;
+
+        // Clique por teclado nao passa por pointerdown: garante que as tags estao vindo.
+        window.__loadGoogleTags();
 
         var A = window.__ANALYTICS__;
 

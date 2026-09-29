@@ -26,6 +26,7 @@ export const WhatsAppBar = ({
       <div className="min-w-0 text-xs leading-snug text-cl-text">{label}</div>
       <WhatsAppLink
         message={message}
+        placement="barra_fixa"
         className="flex h-[46px] flex-none items-center gap-2 whitespace-nowrap rounded-full bg-cl-ink px-[18px] text-sm font-semibold text-cl-cream no-underline"
       >
         {button}
@@ -33,6 +34,7 @@ export const WhatsAppBar = ({
     </div>
     <WhatsAppLink
       message={message}
+      placement="botao_flutuante"
       aria-label="WhatsApp"
       className="fixed bottom-7 right-7 z-30 hidden h-14 items-center gap-2.5 rounded-full bg-cl-ink pl-[18px] pr-[22px] text-sm font-semibold text-cl-cream no-underline shadow-[0_12px_30px_-12px_rgba(28,25,22,.5)] hover:bg-cl-ink-hover d:flex"
     >

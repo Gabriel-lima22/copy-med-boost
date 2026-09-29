@@ -24,6 +24,10 @@ export const createWhatsAppLink = (
   return `https://wa.me/${number}?text=${encodedMessage}`;
 };
 
+/** Link sem o codigo de origem: e o que o HTML gerado no build consegue ter. */
+export const whatsAppLinkWithoutAds = (message: string, number: string = WHATSAPP_NUMBER) =>
+  `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
 /** Refaz um link wa.me ja montado com o codigo de origem de agora. */
 const refreshAdsCode = (whatsappLink: string) => {
   try {

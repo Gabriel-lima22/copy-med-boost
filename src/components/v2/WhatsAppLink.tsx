@@ -1,5 +1,7 @@
-import type { AnchorHTMLAttributes } from "react";
-import { createWhatsAppLink, handleWhatsAppClick } from "@/lib/whatsapp";
+import { useEffect, useState, type AnchorHTMLAttributes } from "react";
+import { useLocation } from "react-router-dom";
+import { trackWhatsAppClick } from "@/lib/analytics";
+import { createWhatsAppLink, handleWhatsAppClick, whatsAppLinkWithoutAds } from "@/lib/whatsapp";
 
 export const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -10,17 +12,37 @@ export const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
 interface WhatsAppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
   /** Mensagem pre-preenchida; o codigo de origem do Ads e anexado sozinho. */
   message: string;
+  /**
+   * Bloco da pagina de onde vem o clique (hero, barra_fixa, cta_final...).
+   * Vai no evento `whatsapp_click` do dataLayer para o GTM/GA4 saberem qual secao converte.
+   */
+  placement: string;
 }
 
 /**
  * Link de WhatsApp do design novo. Passa por handleWhatsAppClick, que refaz o
  * codigo de origem do Ads na hora do clique; a conversao do Ads, o lead do GA4
- * e a marcacao do Clarity saem do listener global do index.html.
+ * e a marcacao do Clarity saem do listener global do index.html. O evento
+ * `whatsapp_click` do dataLayer so informa o GTM - nao dispara conversao.
  */
-export const WhatsAppLink = ({ message, children, ...rest }: WhatsAppLinkProps) => {
-  const href = createWhatsAppLink(message);
+export const WhatsAppLink = ({ message, placement, children, ...rest }: WhatsAppLinkProps) => {
+  const { pathname } = useLocation();
+  // O HTML do build sai sem o codigo do Ads (ele so existe no navegador). O
+  // primeiro render precisa bater com esse HTML; o codigo entra logo depois.
+  const [href, setHref] = useState(() => whatsAppLinkWithoutAds(message));
+  useEffect(() => setHref(createWhatsAppLink(message)), [message]);
+  const procedure = pathname.match(/^\/procedimentos\/([^/]+)/)?.[1];
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" onClick={(e) => handleWhatsAppClick(e, href)} {...rest}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => {
+        trackWhatsAppClick(placement, procedure);
+        handleWhatsAppClick(e, href);
+      }}
+      {...rest}
+    >
       {children}
     </a>
   );

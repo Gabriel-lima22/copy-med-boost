@@ -11,6 +11,9 @@ import { procedureWhatsAppMessage } from "@/lib/whatsapp";
 import retrato from "@/assets/v2/dra-lorena-retrato.webp";
 import NotFound from "./NotFound";
 
+// React 18 nao conhece fetchPriority e avisa no build; em minusculo vai direto para o HTML.
+const HIGH_PRIORITY = { fetchpriority: "high" } as Record<string, string>;
+
 const kicker = "text-[11px] font-semibold uppercase tracking-[.2em] text-cl-gold";
 const h2 = "m-0 font-heading text-[clamp(30px,3.4vw,44px)] font-medium leading-[1.05]";
 const section = "mx-auto max-w-[1200px] px-[clamp(20px,4vw,48px)] pt-[clamp(40px,6vw,80px)]";
@@ -30,7 +33,7 @@ const Hero = ({ p, message }: { p: ProcedimentoData; message: string }) => (
       <img
         src={p.img}
         alt={p.name}
-        fetchPriority="high"
+        {...HIGH_PRIORITY}
         className="absolute inset-0 h-full w-full object-cover"
         style={{ objectPosition: p.imgPos }}
       />
@@ -52,7 +55,7 @@ const Hero = ({ p, message }: { p: ProcedimentoData; message: string }) => (
         <p className="m-0 mt-3 text-sm leading-relaxed text-cl-text d:mt-0 d:max-w-[560px] d:text-[15px] d:leading-[1.65]">{p.paragraph}</p>
       )}
       <div className="mt-[18px] d:mt-1.5">
-        <WhatsAppLink message={message} className={`${btnPrimary} h-[54px] text-[15px] d:inline-flex d:h-14 d:px-7`}>
+        <WhatsAppLink placement="hero" message={message} className={`${btnPrimary} h-[54px] text-[15px] d:inline-flex d:h-14 d:px-7`}>
           <WhatsAppIcon />
           Agendar avaliação
         </WhatsAppLink>
@@ -212,7 +215,7 @@ const Cta = ({ cta, message }: { cta: ProcedimentoData["cta"]; message: string }
     <div className="mx-auto max-w-[720px] px-[clamp(20px,4vw,48px)] text-center">
       <h2 className="m-0 font-heading text-[clamp(30px,3.6vw,46px)] font-medium leading-[1.05]">{cta.title}</h2>
       <p className="mx-auto mb-0 mt-3.5 max-w-[520px] text-[15px] leading-relaxed text-cl-text">{cta.text}</p>
-      <WhatsAppLink message={message} className={`${btnPrimary} mt-[22px] inline-flex h-14 px-[30px] text-[15px]`}>
+      <WhatsAppLink placement="cta_final" message={message} className={`${btnPrimary} mt-[22px] inline-flex h-14 px-[30px] text-[15px]`}>
         <WhatsAppIcon />
         {cta.button}
       </WhatsAppLink>
@@ -273,7 +276,7 @@ const Related = ({ slug }: { slug: string }) => {
             to={procedurePath(c.slug)}
             className={`flex w-[150px] flex-none flex-col items-center text-center text-cl-ink no-underline d:w-auto ${swipe ? "motion-safe:animate-cl-swipe" : ""}`}
           >
-            <img src={c.img} alt={c.name} loading="lazy" className="aspect-[4/3] w-full rounded-xl bg-cl-sand object-cover" />
+            <img src={c.img} alt="" loading="lazy" className="aspect-[4/3] w-full rounded-xl bg-cl-sand object-cover" />
             <div className="mt-2 font-heading text-[clamp(18px,1.8vw,22px)] font-semibold leading-[1.1]">{c.name}</div>
           </Link>
         ))}

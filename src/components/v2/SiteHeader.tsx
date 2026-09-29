@@ -56,6 +56,7 @@ export const SiteHeader = ({ whatsappMessage }: SiteHeaderProps) => {
         </nav>
         <WhatsAppLink
           message={whatsappMessage}
+          placement="cabecalho"
           className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-full bg-cl-ink px-5 text-[13px] font-semibold text-cl-cream no-underline hover:bg-cl-ink-hover d:flex"
         >
           Agendar avaliação
