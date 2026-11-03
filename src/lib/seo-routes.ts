@@ -106,6 +106,9 @@ const clip = (text: string, max = 158) => {
  * Gabriel em 29/09/2026). Ao mudar conteudo clinico em procedimentos-content.ts,
  * so atualizar a data depois de nova revisao dela.
  */
+/** Data da revisao da Dra. Lorena por pagina; as demais foram revisadas em 29/09/2026. */
+const REVIEW_DATES: Record<string, string> = { "rejuvenescimento-intimo": "2026-11-03" };
+
 const PROCEDURE_ROUTES: SeoRoute[] = Object.entries(PROCEDIMENTOS).map(([slug, p]) => {
   const path = procedurePath(slug);
   const url = `${SITE_URL}${path}`;
@@ -124,7 +127,7 @@ const PROCEDURE_ROUTES: SeoRoute[] = Object.entries(PROCEDIMENTOS).map(([slug, p
         description,
         url,
         inLanguage: "pt-BR",
-        lastReviewed: "2026-09-29",
+        lastReviewed: REVIEW_DATES[slug] ?? "2026-09-29",
         reviewedBy: { "@type": "Physician", name: "Dra. Lorena Lacerda", identifier: "CRM-PA 15626" },
         about: { "@type": "MedicalProcedure", name: p.name },
         publisher: { "@type": "MedicalBusiness", name: "Clínica Lacerda", url: SITE_URL },

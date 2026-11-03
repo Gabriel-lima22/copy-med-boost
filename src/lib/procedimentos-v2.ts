@@ -5,6 +5,7 @@ import miniLipo from "@/assets/v2/proc-minilipo.webp";
 import blefaro from "@/assets/v2/proc-blefaro.webp";
 import capilar from "@/assets/v2/proc-capilar-card.webp";
 import gluteo from "@/assets/v2/proc-gluteo.webp";
+import rejuvIntimo from "@/assets/v2/proc-rejuvenescimento-intimo.webp";
 
 /**
  * Procedimentos do design novo, na ordem da grade da home.
@@ -25,6 +26,7 @@ export const PROCEDURE_CARDS: ProcedureCard[] = [
   { slug: "blefaroplastia", name: "Blefaroplastia", short: "Rejuvenescimento do olhar", img: blefaro },
   { slug: "tratamento-capilar", name: "Tratamento Capilar", short: "Combate à queda e fortalecimento", img: capilar },
   { slug: "modelacao-glutea", name: "Modelação Glútea", short: "Contorno e firmeza", img: gluteo },
+  { slug: "rejuvenescimento-intimo", name: "Rejuvenescimento Íntimo", short: "Clareamento e firmeza da região íntima", img: rejuvIntimo },
 ];
 
 export const procedurePath = (slug: string) => `/procedimentos/${slug}`;

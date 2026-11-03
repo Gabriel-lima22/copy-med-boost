@@ -7,6 +7,7 @@
  * depois, sem precos e sem a expressao "toxina botulinica".
  */
 import imgCapelluxI9 from "@/assets/v2/capellux-i9.webp";
+import imgProcRejuvIntimo from "@/assets/v2/proc-rejuvenescimento-intimo.webp";
 import imgHegonCo2 from "@/assets/v2/hegon-co2.webp";
 import imgLaserCo2Rosto from "@/assets/v2/laser-co2-rosto.webp";
 import imgLiftendo from "@/assets/v2/liftendo.webp";
@@ -37,7 +38,11 @@ export interface Procedimento {
   diff?: { title: string; text: string };
   equip?: { title: string; items: string[]; img: string };
   steps?: { t: string; d: string }[];
+  /** Kicker e titulo da secao de passos; padrao "O dia do procedimento" / "Passo a passo" */
+  stepsHeading?: { kicker: string; title: string };
   after: string[];
+  /** Titulo da secao "Depois"; padrao "Recuperação e resultado" */
+  afterTitle?: string;
   who: { title: string; text: string; crm: string };
   faq: { q: string; a: string }[];
   cta: { title: string; text: string; button: string };
@@ -280,5 +285,41 @@ export const PROCEDIMENTOS: Record<string, Procedimento> = {
     ],
     cta: { title: "Sua queda tem nome?", text: "Mande uma foto do couro cabeludo — topo da cabeça e entradas, com luz natural — pelo WhatsApp. A equipe agenda sua consulta com a Dra. Lorena.", button: "Agendar consulta" },
     related: ["harmonizacao-facial", "laser-co2-fracionado", "endolaser"],
+  },
+
+  "rejuvenescimento-intimo": {
+    name: "Rejuvenescimento Íntimo", kicker: "Rejuvenescimento íntimo", title: "Cuidado íntimo,", titleEm: "com avaliação médica.",
+    subtitle: "Escurecimento da região íntima, da virilha e das axilas, e flacidez da região. Um tratamento em sessões, definido na consulta.",
+    paragraph: "Não existe sessão única que resolva. A Dra. avalia a área que incomoda e escolhe o método — peeling, microagulhamento ou laser CO2 — e você sai da consulta com a rotina de cuidados para fazer em casa.",
+    equipLine: "Peeling, microagulhamento e laser CO2 fracionado Hegon · registro ANVISA 81243810014",
+    img: imgProcRejuvIntimo, imgPos: "50% 62%", heroH: 380,
+    forWhom: [
+      { t: "Escurecimento da região íntima e da virilha", area: "Íntima" },
+      { t: "Escurecimento das axilas", area: "Axilas" },
+      { t: "Flacidez da região íntima", area: "Íntima" },
+      { t: "Perda de volume da região íntima", area: "Íntima" },
+    ],
+    forWhomNote: "Para maiores de 18 anos. A técnica, a área e o número de sessões são definidos na consulta médica.",
+    diff: { title: "Uma técnica para cada fase", text: "Em pacientes mais jovens, o mais comum é o peeling, em geral em quatro sessões. A partir dos 40 anos, o laser CO2 pode ser associado ao drug delivery — a entrega de ativos clareadores pelos microcanais que o laser abre na pele — num pacote de três sessões. Além do escurecimento, o CO2 também ajuda na flacidez da região. O microagulhamento é outra opção. Para volume e flacidez, o bioestimulador de colágeno entra no plano. A Dra. escolhe o método pelo seu caso." },
+    equip: { title: "Laser CO2 Fracionado Hegon", items: ["Laser de CO2 fracionado com registro ANVISA 81243810014", "Abre microcanais na pele que permitem a entrega de ativos clareadores (drug delivery)", "Estimula colágeno, o que também ajuda na flacidez da região", "Operado pela própria Dra. Lorena"], img: imgHegonCo2 },
+    steps: [
+      { t: "Consulta médica", d: "A Dra. Lorena avalia a área que incomoda — região íntima, virilha ou axilas — e o grau de escurecimento e de flacidez." },
+      { t: "Plano de tratamento", d: "Definição do método (peeling, microagulhamento ou laser CO2 com drug delivery) e do número de sessões." },
+      { t: "Skincare íntimo", d: "Na própria consulta, a prescrição do sabonete, do hidratante e do clareador para usar em casa, com as orientações de uso." },
+      { t: "Sessões no consultório", d: "Feitas pela Dra., com orientações a cada etapa e o WhatsApp da clínica para qualquer dúvida." },
+    ],
+    stepsHeading: { kicker: "Como é o tratamento", title: "Da consulta ao cuidado em casa" },
+    after: ["O tratamento não acontece só no consultório. O clareamento depende das sessões e do skincare íntimo em casa, com os produtos e as orientações prescritos pela Dra.", "Peeling: em geral 4 sessões. Laser CO2 com drug delivery: pacote de 3 sessões. Bioestimulador de colágeno: sessão única, repetida a cada 6 meses ou uma vez por ano. O plano exato é definido na consulta."],
+    afterTitle: "Sessões e cuidados em casa",
+    who: { title: "Médica na sala, do começo ao fim.", text: "Quem avalia é quem trata. A Dra. Lorena Lacerda faz a consulta, define o método, prescreve o skincare íntimo e conduz as sessões pessoalmente.", crm: "CRM-PA 15626" },
+    faq: [
+      { q: "A partir de que idade posso fazer?", a: "A partir dos 18 anos. O método muda conforme a idade e a pele, e é definido na consulta." },
+      { q: "Uma sessão resolve?", a: "Não. O escurecimento é tratado em sessões — em geral 4 no peeling e 3 no laser CO2 com drug delivery — junto com o skincare em casa." },
+      { q: "Trata as axilas também?", a: "Trata. A avaliação vale para a região íntima, a virilha e as axilas." },
+      { q: "O que é o skincare íntimo?", a: "É a rotina de casa que a Dra. prescreve na consulta: sabonete, hidratante e clareador indicados para a sua pele, com as orientações de uso. É ela que torna o clareamento efetivo." },
+      { q: "E a flacidez da região?", a: "O laser CO2 também ajuda na flacidez. O bioestimulador de colágeno melhora volume e firmeza em sessão única, repetida a cada 6 meses ou uma vez por ano." },
+    ],
+    cta: { title: "Qual tratamento é o seu?", text: "Fale com a equipe pelo WhatsApp. A primeira etapa é a consulta com a Dra. Lorena.", button: "Agendar consulta" },
+    related: ["laser-co2-fracionado", "harmonizacao-facial", "endolaser"],
   },
 };

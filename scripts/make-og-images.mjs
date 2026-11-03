@@ -21,6 +21,7 @@ const MAP = {
   // Paginas que so existem no design novo: fotos de assets-src/v2
   blefaroplastia: "v2/proc-blefaro.jpg",
   "modelacao-glutea": "v2/proc-gluteo.jpg",
+  "rejuvenescimento-intimo": "v2/proc-rejuvenescimento-intimo.png",
 };
 
 const W = 1200;

@@ -74,6 +74,7 @@ const PROCEDURE_WHATSAPP_NAMES: Record<string, string> = {
   "harmonizacao-facial": "Harmonização Facial",
   "mini-lipo-localizada": "Mini Lipo",
   "tratamento-capilar": "Tratamento Capilar",
+  "rejuvenescimento-intimo": "Rejuvenescimento Íntimo",
 };
 
 export const procedureWhatsAppMessage = (slug: string) =>

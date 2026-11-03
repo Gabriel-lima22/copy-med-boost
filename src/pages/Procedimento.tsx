@@ -133,10 +133,10 @@ const Equip = ({ equip }: { equip: NonNullable<ProcedimentoData["equip"]> }) => 
   </section>
 );
 
-const Steps = ({ steps }: { steps: NonNullable<ProcedimentoData["steps"]> }) => (
+const Steps = ({ steps, heading }: { steps: NonNullable<ProcedimentoData["steps"]>; heading?: ProcedimentoData["stepsHeading"] }) => (
   <section className={section}>
-    <div className={`${kicker} mb-2`}>O dia do procedimento</div>
-    <h2 className={`${h2} mb-[clamp(8px,1.5vw,20px)]`}>Passo a passo</h2>
+    <div className={`${kicker} mb-2`}>{heading?.kicker ?? "O dia do procedimento"}</div>
+    <h2 className={`${h2} mb-[clamp(8px,1.5vw,20px)]`}>{heading?.title ?? "Passo a passo"}</h2>
     <ol className="m-0 grid list-none gap-x-[clamp(16px,2.5vw,32px)] p-0 d:grid-cols-2">
       {steps.map((s, i) => (
         <li key={s.t} className="grid grid-cols-[40px_1fr] gap-3.5 border-t border-cl-line py-4">
@@ -151,12 +151,12 @@ const Steps = ({ steps }: { steps: NonNullable<ProcedimentoData["steps"]> }) => 
   </section>
 );
 
-const After = ({ after }: { after: string[] }) => (
+const After = ({ after, title }: { after: string[]; title?: string }) => (
   <section className="mt-[clamp(40px,6vw,80px)] bg-cl-sand py-[clamp(28px,4vw,56px)]">
     <div className={`${split} mx-auto max-w-[1200px] px-[clamp(20px,4vw,48px)]`}>
       <div>
         <div className={`${kicker} mb-2`}>Depois</div>
-        <h2 className={h2}>Recuperação e resultado</h2>
+        <h2 className={h2}>{title ?? "Recuperação e resultado"}</h2>
       </div>
       <div className="flex flex-col gap-3">
         {after.map((a) => (
@@ -301,8 +301,8 @@ const Procedimento = () => {
         {p.forWhom.length > 0 && <ForWhom p={p} />}
         {p.diff && <Diff diff={p.diff} />}
         {p.equip && <Equip equip={p.equip} />}
-        {p.steps && p.steps.length > 0 && <Steps steps={p.steps} />}
-        {p.after.length > 0 && <After after={p.after} />}
+        {p.steps && p.steps.length > 0 && <Steps steps={p.steps} heading={p.stepsHeading} />}
+        {p.after.length > 0 && <After after={p.after} title={p.afterTitle} />}
         <Who who={p.who} />
         {p.faq.length > 0 && <Faq faq={p.faq} />}
         <Cta cta={p.cta} message={message} />
